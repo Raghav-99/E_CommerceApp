@@ -13,32 +13,35 @@ export class UserListComponent implements OnInit {
 User=Array<User>();
 u:User=new User();
 msg:string=''
-constructor(private _cs:UserService) {
-  this.getUsersFromService() 
-}
-getUsersFromService(){
+constructor(private _cs:UserService) { }
+
+getUsersFromService() {
   this._cs.getUsersFromAPI()
   .subscribe(response=>this.User =response);
 }
-getUserById(id:number){
+
+getUserById(id:string){
   this._cs.getUsersByIdFromAPI(id)
   .subscribe(response=>this.u=response);
 }
-deleteUserById(id:number){
+
+deleteUserById(id:string){
   this._cs.deleteUserByIdFromAPI(id)
   .subscribe(response=>this.u=response);
 }
-addUser(u:User){
- this._cs.addUserFromAPI(this.u)
- .subscribe(response=>()=>this.msg="Row added successfully.");
-}
-updateUserById(id:number){
+// addUser(u:User){
+//  this._cs.addUserFromAPI(this.u)
+//  .subscribe(response=>()=>this.msg="Row added successfully.");
+// }
+
+updateUserById(id:string){
   this._cs.updateUserByIdFromAPI(id,this.u)
   .subscribe(response=>()=>this.msg="Row updated successfully."); 
 }
 
 
   ngOnInit(): void {
+    this.getUsersFromService()
   }
 
 }

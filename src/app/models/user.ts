@@ -1,10 +1,14 @@
 export class User{
-    id:number=0;
-    username:string='';
-    password:string='';
-    constructor(id:number=0,username:string='',password:string=''){
-        this.id=id;
-        this.username=username;
-        this.password=password;
+    Username:string='';
+    DateOfBirth:string = ""
+    SecQuestion = ""
+    ModifiedBy:string = ""
+    Answer:string = ""
+    constructor(username:string='',dob:string='', secQuestion:string = '', modifiedBy:string = '', answer:string = ''){
+        this.Username=username;
+        this.DateOfBirth = dob;
+        this.SecQuestion = secQuestion;
+        this.ModifiedBy = modifiedBy;
+        this.Answer = answer
     }
 }

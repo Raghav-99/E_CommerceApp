@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrationModule } from './registration/registration.module';
 import { ForgotpageComponent } from './Forgotpwd/forgotpage/forgotpage.component';
 import { FormsModule } from '@angular/forms';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     AdminModule,HttpClientModule,RegistrationModule,FormsModule
   
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

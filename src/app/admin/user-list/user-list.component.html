@@ -2,9 +2,9 @@
 <table class="table table-bordered table-hover table-success">
     <tbody>
         <tr *ngFor="let c of User">
-            <td>{{c.id}}</td>
-            <td>{{c.username}}</td>
-            <td>{{c.password}}</td>
+            <td>{{c.Username}}</td>
+            <td>{{c.DateOfBirth}</td>
+            <td>{{c.SecQuestion}}</td>
 
         </tr>
     </tbody>
@@ -15,18 +15,30 @@
     <tbody>
         <p>Usercrud Operations</p>
             <tr>
-                <td>UserID</td>
-                <td><input type="number" [(ngModel)]="u.id"></td>
+                <td>UserName</td>
+                <td><input type="text" [(ngModel)]="u.Username"></td>
         
             </tr>
             <tr>
-                <td>Name</td>
-                <td><input type="text" [(ngModel)]="u.username"></td>
+                <td>Dob</td>
+                <td><input type="date" [(ngModel)]="u.DateOfBirth"></td>
         
             </tr>
+
             <tr>
-                <td>Password</td>
-                <td><input type="text" [(ngModel)]="u.password"></td>
+                <td>Security Question</td>
+                <td><input type="text" [(ngModel)]="u.SecQuestion"></td>
+        
+            </tr>
+
+            <tr>
+                <td>ModifiedBy</td>
+                <td><input type="text" [(ngModel)]="u.ModifiedBy"></td>
+            </tr>
+            
+            <tr>
+                <td>Answer</td>
+                <td><input type="text" [(ngModel)]="u.Answer"></td>
             </tr>
 
         
@@ -34,10 +46,11 @@
         
         
     </tbody>
+
 </table>
 Operations
                 
-<button class="btn btn-dark" (click)="getUserById(u.id)">Search</button> &nbsp; &nbsp;
-<button class="btn btn-warning" (click)="updateUserById(u.id)">Update</button> &nbsp; &nbsp;
-<button class="btn btn-danger" (click)="deleteUserById(u.id)">Delete</button>&nbsp; &nbsp;
-<button class="btn btn-success" (click)="addUser(u)">ADD</button>
+<button class="btn btn-dark" (click)="getUserById(u.Username)">Search</button> &nbsp; &nbsp;
+<button class="btn btn-warning" (click)="updateUserById(u.Username)">Update</button> &nbsp; &nbsp;
+<button class="btn btn-danger" (click)="deleteUserById(u.Username)">Delete</button>&nbsp; &nbsp;
+<!-- <button class="btn btn-success" (click)="addUser(u)">ADD</button> -->
