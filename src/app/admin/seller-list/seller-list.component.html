@@ -1,0 +1,43 @@
+<p>seller-list</p>
+<table class="table table-bordered table-primary table-hover">
+   
+    <tbody>
+        
+        <tr *ngFor="let s of Seller" (click)="getSellerById(s.id)">
+            <td>{{s.id}}</td>
+            <td>{{s.username}}</td>
+            <td>{{s.password}}</td>
+            <!-- <td><button (click)="getSellerById(s.id)" class="btn btn-group-lg">click</button></td> -->
+        </tr>
+    
+    </tbody>
+
+</table>
+
+<p>Seller crud Operations</p>
+
+<table class="table table-bordered table-hover table-warning">
+    <tbody>
+        <tr>
+            <td>UserID</td>
+            <td><input type="number" [(ngModel)]="s.id"></td>
+
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" [(ngModel)]="s.username"></td>
+
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" [(ngModel)]="s.password"></td>
+        </tr>
+    </tbody>
+</table>
+Operations :
+<!-- <button class="btn btn-dark" (click)="getSellerById(s.id)">Search</button> &nbsp; &nbsp; -->
+<button class="btn btn-warning" (click)="updateSellerById(s.id)">Update</button> &nbsp; &nbsp;
+<button class="btn btn-danger" (click)="deleteSellerById(s.id)">Delete</button> &nbsp; &nbsp;
+<button class="btn btn-success" (click)="addSeller(s)">ADD</button> &nbsp; &nbsp;
+<button class="btn btn-dark" (click)="makeInactive(s.id)">Mark as Inactive</button>
+

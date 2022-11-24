@@ -27,6 +27,9 @@
         color: blue;
     }
 }
+.btn-primary{
+    margin-block-end: auto;
+}
  
  .card-top {
     position: relative;

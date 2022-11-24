@@ -1,0 +1,43 @@
+<p>User list</p>
+<table class="table table-bordered table-hover table-success">
+    <tbody>
+        <tr *ngFor="let c of User">
+            <td>{{c.id}}</td>
+            <td>{{c.username}}</td>
+            <td>{{c.password}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+<table class="table table-bordered table-warning table-hover">
+    <tbody>
+        <p>Usercrud Operations</p>
+            <tr>
+                <td>UserID</td>
+                <td><input type="number" [(ngModel)]="u.id"></td>
+        
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" [(ngModel)]="u.username"></td>
+        
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" [(ngModel)]="u.password"></td>
+            </tr>
+
+        
+      
+        
+        
+    </tbody>
+</table>
+Operations
+                
+<button class="btn btn-dark" (click)="getUserById(u.id)">Search</button> &nbsp; &nbsp;
+<button class="btn btn-warning" (click)="updateUserById(u.id)">Update</button> &nbsp; &nbsp;
+<button class="btn btn-danger" (click)="deleteUserById(u.id)">Delete</button>&nbsp; &nbsp;
+<button class="btn btn-success" (click)="addUser(u)">ADD</button>

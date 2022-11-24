@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <button class="btn btn-primary" (click)="a = 'Seller'  ">Sellers</button> &nbsp;
+    <button class="btn btn-primary" (click)="a = 'user'">User</button>
+
+
+    <app-seller-list *ngIf="a=='Seller'"></app-seller-list>
+    <app-user-list *ngIf="a=='user'"></app-user-list>
+
+</div>
