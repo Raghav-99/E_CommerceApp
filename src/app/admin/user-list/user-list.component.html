@@ -1,56 +1,55 @@
 <p>User list</p>
 <table class="table table-bordered table-hover table-success">
     <tbody>
-        <tr *ngFor="let c of User">
-            <td>{{c.Username}}</td>
-            <td>{{c.DateOfBirth}</td>
-            <td>{{c.SecQuestion}}</td>
+        <tr *ngFor="let c of ListOfUsers">
+            <td>{{c.username}}</td>
+            <td>{{c.dateOfBirth}}</td>
+            <td>{{c.secQuestion}}</td>
 
         </tr>
     </tbody>
 </table>
 
-
+<!-- !!!!! fields marked like this are readonly --> 
 <table class="table table-bordered table-warning table-hover">
     <tbody>
         <p>Usercrud Operations</p>
             <tr>
-                <td>UserName</td>
-                <td><input type="text" [(ngModel)]="u.Username"></td>
+                <td><label for="uname">UserName</label></td>
+                <td><input name="uname" type="text" [(ngModel)]="User.username" placeholder="Username"></td>
         
             </tr>
             <tr>
-                <td>Dob</td>
-                <td><input type="date" [(ngModel)]="u.DateOfBirth"></td>
-        
-            </tr>
-
-            <tr>
-                <td>Security Question</td>
-                <td><input type="text" [(ngModel)]="u.SecQuestion"></td>
+                <!-- !!!!! -->
+                <td><label for="dob">DOB</label></td>
+                <td><input readonly name="dob" type="date" [(ngModel)]="User.dateOfBirth" placeholder="DOB"></td>
         
             </tr>
 
             <tr>
-                <td>ModifiedBy</td>
-                <td><input type="text" [(ngModel)]="u.ModifiedBy"></td>
+                <!-- !!!!! -->
+                <td><label for="question">Security Question</label></td>
+                <td><input readonly name="question" type="text" [(ngModel)]="User.secQuestion"  placeholder="Security Question"></td>
+        
+            </tr>
+
+            <tr>
+                <td><label for="modifiedBy">Modified By</label></td>
+                <td><input name="modifiedBy" type="text" [(ngModel)]="User.modifiedBy" placeholder="Modified By"></td>
             </tr>
             
             <tr>
-                <td>Answer</td>
-                <td><input type="text" [(ngModel)]="u.Answer"></td>
+                <!-- !!!!! -->
+                <td><label for="answer">Answer</label></td>
+                <td><input readonly name="answer" type="text" [(ngModel)]="User.answer" placeholder="Answer"></td>
             </tr>
-
-        
-      
         
         
     </tbody>
 
 </table>
 Operations
-                
-<button class="btn btn-dark" (click)="getUserById(u.Username)">Search</button> &nbsp; &nbsp;
-<button class="btn btn-warning" (click)="updateUserById(u.Username)">Update</button> &nbsp; &nbsp;
-<button class="btn btn-danger" (click)="deleteUserById(u.Username)">Delete</button>&nbsp; &nbsp;
+<button class="btn btn-dark" (click)="getUserById(User.username)">Search</button> &nbsp; &nbsp;
+<button class="btn btn-warning" (click)="updateUserById(User.username)">Update</button> &nbsp; &nbsp;
+<button class="btn btn-danger" (click)="deleteUserById(User.username)">Delete</button>&nbsp; &nbsp;
 <!-- <button class="btn btn-success" (click)="addUser(u)">ADD</button> -->

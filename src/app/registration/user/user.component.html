@@ -59,18 +59,16 @@
         <i class=" fa fa-birthday-cake fa-lg me-3 fa-fw"></i>
         <input type="date" name="dob" id="dob" class="form-control" [(ngModel)]="DOB" placeholder="Date of Birth" />
       </div>
-     
       
       <div class="d-flex flex-row align-items-center mb-4">
         <i class=" fa fa-map-marker fa-lg me-3 fa-fw"></i>
         <input type="text" name="address" id="address" class="form-control" [(ngModel)]="address" placeholder="Enter Your Address" />
       </div>
-     
     
     
       <div class="d-flex flex-row align-items-center mb-4">
         <i class=" fa fa-question-circle-o fa-lg me-3 fa-fw"></i>
-        <select name="hquestion" id="hquestion" class="form-control">
+        <select title="Choose options" name="hquestion" id="hquestion" class="form-control">
           <option value="" disabled selected>Select your option</option>
           <option value="op1">What was the name of your first manager at your first job?</option>
           <option value="op2">What was your favorite subject in high school?</option>

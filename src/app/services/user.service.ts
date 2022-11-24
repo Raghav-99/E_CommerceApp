@@ -9,8 +9,8 @@ export class UserService {
 
   Users = Array<User>();
   url = 'http://localhost:5233/api/';
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
+  
   getUsersFromAPI() {
     return this.http.get<User[]>(this.url+'user');
   }
@@ -29,8 +29,8 @@ export class UserService {
   
   updateUserByIdFromAPI(UId: string,c:User) {
     return this.http.put(`${this.url+'user'}/${UId}`,c,{
-           headers:new HttpHeaders({
-             'Content-Type':'application/json'
+          headers:new HttpHeaders({
+            'Content-Type':'application/json'
           })
         });
   }
