@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user/user.component';
 import { SellerComponent } from './seller/seller.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     SellerComponent
   ],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule,ReactiveFormsModule
   ],
   exports: [UserComponent,SellerComponent]
 })
