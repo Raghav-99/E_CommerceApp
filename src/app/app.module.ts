@@ -11,6 +11,7 @@ import { RegistrationModule } from './registration/registration.module';
 import { ForgotpageComponent } from './Forgotpwd/forgotpage/forgotpage.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { UserService } from './services/user.service';
     AdminModule,HttpClientModule,RegistrationModule,FormsModule
   
   ],
-  providers: [UserService],
+  providers: [UserService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

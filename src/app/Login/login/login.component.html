@@ -4,10 +4,10 @@
 <input type="radio" id="user" name="roles" />User  &nbsp;&nbsp;
 <input type="radio" id="seller" name="roles"/>Seller&nbsp;&nbsp;<br><br>
 
-<form>
- Username <input type="text" id="uname" placeholder="uname"><br><br>
- Password <input type="password" id="pwd" placeholder="pwd"><br><br>
- <button type="submit" value="Submit">Submit</button>
+<form method="post" action="/dashboard">
+ Username <input type="text" id="uname" placeholder="uname" name="uname" [(ngModel)]="uname"><br><br>
+ Password <input type="password" id="pwd" placeholder="pwd" name="pwd" [(ngModel)]="pwd"><br><br>
+ <button type="submit" value="Submit" (click)="Authenticate()">Log In</button>
 </form>
 
 
