@@ -18,7 +18,7 @@ export class SellersService {
   getSellersFromAPI() {
     return this.http.get<Seller[]>(this.url);
   }
-  getSellersByIdFromAPI(id: number) {
+  getSellersByIdFromAPI(id: string) {
     return this.http.get<Seller>(this.url + '/' + id);
   }
   addSellerFromAPI(c: Seller) {
@@ -29,14 +29,14 @@ export class SellersService {
     });
   }
   x:any={};
-  updateSellerByIdFromAPI(empno: number,c:Seller) {
-    return this.http.put(`${this.url}/${empno}`,c,{
+  updateSellerByIdFromAPI(username: string,c:Seller) {
+    return this.http.put(`${this.url}/${username}`,c,{
            headers:new HttpHeaders({
              'Content-Type':'application/json'
           })
         });
   }
-  deleteSellerByIdFromAPI(id: number) {
+  deleteSellerByIdFromAPI(id:string) {
     return this.http.delete<Seller>(this.url + '/' + id);
   }
 }
