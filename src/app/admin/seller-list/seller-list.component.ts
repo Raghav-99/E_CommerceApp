@@ -18,25 +18,25 @@ export class SellerListComponent implements OnInit {
     this._cs.getSellersFromAPI()
     .subscribe(response=>this.Seller =response);
   }
-  getSellerById(id:number){
+  getSellerById(id:string){
     this._cs.getSellersByIdFromAPI(id)
     .subscribe(response=>this.s=response);
   }
-  deleteSellerById(id:number){
+  deleteSellerById(id:string){
     this._cs.deleteSellerByIdFromAPI(id)
     .subscribe(response=>this.s=response);
   }
-  addSeller(s:Seller){
-   this._cs.addSellerFromAPI(this.s)
-   .subscribe(response=>()=>this.msg="Row added successfully.");
-  }
-  updateSellerById(id:number){
+  // addSeller(s:Seller){
+  //  this._cs.addSellerFromAPI(this.s)
+  //  .subscribe(response=>()=>this.msg="Row added successfully.");
+  // }
+  updateSellerById(id:string){
     this._cs.updateSellerByIdFromAPI(id,this.s)
     .subscribe(response=>()=>this.msg="Row updated successfully."); 
   }
-  makeInactive(id:number){
-    this.s.active=0;
-  }
+  // makeInactive(id:number){
+  //   this.s.active=0;
+  // }
 
   ngOnInit(): void {
   }
