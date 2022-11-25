@@ -3,17 +3,17 @@
    
     <tbody>
         
-        <tr *ngFor="let s of Seller" (click)="getSellerById(s.Username)">
-            <td>{{s.fullname}</td>
-            <td>{{s.Username}</td>
-            <td>{{s.email</td>
-            <td>{{s.secQuestion}</td>
-            <td>{{s.Answer}</td>
-            <td>{{s.Phoneno}</td>
-            <td>{{s.Shopname}</td>
-            <td>{{s.Shopno}</td>
-            <td>{{s.Productname}</td>
-            <td>{{s.ProductDetails}</td>
+        <tr *ngFor="let s of Seller" (click)="getSellerById(s.username)">
+            <td>{{s.fullName}}</td>
+            <td>{{s.username}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.securityQuestion}}</td>
+            <td>{{s.answer}}</td>
+            <td>{{s.phoneNo}}</td>
+            <td>{{s.shopName}}</td>
+            <td>{{s.shopRegNo}}</td>
+            <td>{{s.productName}}</td>
+            <td>{{s.productDetails}}</td>
 
             <!-- <td><button (click)="getSellerById(s.id)" class="btn btn-group-lg">click</button></td> -->
         </tr>
@@ -28,13 +28,13 @@
     <tbody>
         <tr>
             <td><label for="fname">FullName</label></td>
-            <td><input readonly name="fname" type="text" [(ngModel)]="s.fullname" placeholder="SellerName"></td>
+            <td><input readonly name="fname" type="text" [(ngModel)]="s.fullName" placeholder="SellerName"></td>
     
         </tr>
 
         <tr>
             <td><label for="fname">UserName</label></td>
-            <td><input readonly name="fname" type="text" [(ngModel)]="s.Username" placeholder="SellerName"></td>
+            <td><input name="fname" type="text" [(ngModel)]="s.username" placeholder="SellerName"></td>
     
         </tr>
 
@@ -45,43 +45,42 @@
         </tr>
         <tr>
             <td><label for="secQuestion">Securtiy Question</label></td>
-            <td><input readonly name="secQuestion" type="text" [(ngModel)]="s.secQuestion" placeholder="Security Question"></td>
+            <td><input readonly name="secQuestion" type="text" [(ngModel)]="s.securityQuestion" placeholder="Security Question"></td>
     
         </tr>
         <tr>
             <td><label for="Answer">Answer</label></td>
-            <td><input readonly name="Answer" type="text" [(ngModel)]="s.Answer" placeholder="Answer"></td>
+            <td><input readonly name="Answer" type="text" [(ngModel)]="s.answer" placeholder="Answer"></td>
     
         </tr>
         <tr>
             <td><label for="Phoneno">Phone Number</label></td>
-            <td><input readonly name="Phoneno" type="tel" [(ngModel)]="s.Phoneno" placeholder="Phone Number"></td>
+            <td><input readonly name="Phoneno" type="number" [(ngModel)]="s.phoneNo" placeholder="Phone Number"></td>
     
         </tr>
         <tr>
             <td><label for="Shopname">Shop Name</label></td>
-            <td><input readonly name="Shopname" type="text" [(ngModel)]="s.Shopname" placeholder="Shop Name"></td>
+            <td><input name="Shopname" type="text" [(ngModel)]="s.shopName" placeholder="Shop Name"></td>
     
         </tr>
         <tr>
             <td><label for="Shopno">Shop Number</label></td>
-            <td><input readonly name="Shopno" type="number" [(ngModel)]="s.Shopno" placeholder="Shop Number"></td>
+            <td><input name="Shopno" type="text" [(ngModel)]="s.shopRegNo" placeholder="Shop Number"></td>
     
         </tr>
         <tr>
             <td><label for="Productname">Product Name></label></td>
-            <td><input readonly name="Productname" type="text" [(ngModel)]="s.productname" placeholder="Product Name"></td>
+            <td><input readonly name="Productname" type="text" [(ngModel)]="s.productName" placeholder="Product Name"></td>
     
         </tr>
         <tr>
             <td><label for="Productdetails">Product Details></label></td>
             <td><input readonly name="Productdetails" type="text" [(ngModel)]="s.productDetails" placeholder="Product details"></td>
-    
         </tr>
     </tbody>
 </table>Operations :
- <button class="btn btn-dark" (click)="getSellerById(s.Username)">Search</button> &nbsp; &nbsp; 
-<button class="btn btn-warning" (click)="updateSellerById(s.Username)">Update</button> &nbsp; &nbsp;
-<button class="btn btn-danger" (click)="deleteSellerById(s.Username)">Delete</button>&nbsp; &nbsp;
+ <button class="btn btn-dark" (click)="getSellerById(s.username)">Search</button> &nbsp; &nbsp; 
+<button class="btn btn-warning" (click)="updateSellerById(s.username)">Update</button> &nbsp; &nbsp;
+<button class="btn btn-danger" (click)="deleteSellerById(s.username)">Delete</button>&nbsp; &nbsp;
 
 
