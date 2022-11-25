@@ -8,13 +8,14 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 export class SellersService {
 
   Sellers = Array<Seller>();
-  url = 'http://localhost:3000/Sellers';
+  url = 'http://localhost:5233/api/Seller';
   constructor(private http: HttpClient) {
   }
 
-  makeInactive(id:number){
+  // makeInactive(id:number){
     
-  }
+  // }
+  
   getSellersFromAPI() {
     return this.http.get<Seller[]>(this.url);
   }

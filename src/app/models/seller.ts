@@ -1,13 +1,13 @@
 export class Seller{
-    fullname:string='';
-    Username:string='';
+    fullName:string='';
+    username:string='';
     email:string='';
-    secQuestion:string='';
-    Answer:string='';
-    Phoneno:string='';
-    Shopname:string='';
-    Shopno:string='';
-    productname:string='';
+    securityQuestion:string='';
+    answer:string='';
+    phoneNo:string='';
+    shopName:string='';
+    shopRegNo:string='';
+    productName:string='';
     productDetails:string='';
 
    
