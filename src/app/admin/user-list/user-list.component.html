@@ -3,7 +3,6 @@
     <tbody>
         <tr *ngFor="let c of ListOfUsers">
             <td>{{c.username}}</td>
-            <td>{{c.dateOfBirth}}</td>
             <td>{{c.secQuestion}}</td>
 
         </tr>
@@ -17,12 +16,6 @@
             <tr>
                 <td><label for="uname">UserName</label></td>
                 <td><input name="uname" type="text" [(ngModel)]="User.username" placeholder="Username"></td>
-        
-            </tr>
-            <tr>
-                <!-- !!!!! -->
-                <td><label for="dob">DOB</label></td>
-                <td><input readonly name="dob" type="date" [(ngModel)]="User.dateOfBirth" placeholder="DOB"></td>
         
             </tr>
 

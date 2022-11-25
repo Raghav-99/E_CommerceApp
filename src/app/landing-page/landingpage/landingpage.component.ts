@@ -9,12 +9,14 @@ import { ProductsService } from 'src/app/services/products.service';
 export class LandingpageComponent implements OnInit {
   product: any[]=[];
 
-  constructor(private products:ProductsService) { 
+  constructor(private products:ProductsService,) { 
         this.product = this.products.getProductsFromService();
 
   }
-
+  
   ngOnInit(): void {
   }
+
+  
 
 }
