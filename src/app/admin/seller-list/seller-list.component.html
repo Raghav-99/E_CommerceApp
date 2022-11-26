@@ -12,8 +12,6 @@
             <td>{{s.phoneNo}}</td>
             <td>{{s.shopName}}</td>
             <td>{{s.shopRegNo}}</td>
-            <td>{{s.productName}}</td>
-            <td>{{s.productDetails}}</td>
 
             <!-- <td><button (click)="getSellerById(s.id)" class="btn btn-group-lg">click</button></td> -->
         </tr>
@@ -67,15 +65,6 @@
             <td><label for="Shopno">Shop Number</label></td>
             <td><input name="Shopno" type="text" [(ngModel)]="s.shopRegNo" placeholder="Shop Number"></td>
     
-        </tr>
-        <tr>
-            <td><label for="Productname">Product Name></label></td>
-            <td><input readonly name="Productname" type="text" [(ngModel)]="s.productName" placeholder="Product Name"></td>
-    
-        </tr>
-        <tr>
-            <td><label for="Productdetails">Product Details></label></td>
-            <td><input readonly name="Productdetails" type="text" [(ngModel)]="s.productDetails" placeholder="Product details"></td>
         </tr>
     </tbody>
 </table>Operations :
