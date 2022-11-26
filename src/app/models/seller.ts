@@ -1,7 +1,7 @@
 export class Seller{
     fullName:string='';
     username:string='';
-    email:string='';
+    //email:string='';
     securityQuestion:string='';
     answer:string='';
     phoneNo:string='';
@@ -9,11 +9,11 @@ export class Seller{
     address:string='';
     shopRegNo:string='';
 
-    constructor(fullname?:string, Username?:string,email?:string,secQuestion?:string,Answer?:string,Phoneno?:string,
+    constructor(fullname?:string, Username?:string,/*email?:string,*/secQuestion?:string,Answer?:string,Phoneno?:string,
     Shopname?:string,Shopno?:string,address?:string){
         this.fullName=fullname||'';
         this.username=Username||'';
-        this.email=email||'';
+        //this.email=email||'';
         this.securityQuestion=secQuestion||'';
         this.answer=Answer||'';
         this.phoneNo=Phoneno||'';

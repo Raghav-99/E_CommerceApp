@@ -6,7 +6,7 @@
         <tr *ngFor="let s of Seller" (click)="getSellerById(s.username)">
             <td>{{s.fullName}}</td>
             <td>{{s.username}}</td>
-            <td>{{s.email}}</td>
+            <!-- <td>{{s.email}}</td> -->
             <td>{{s.securityQuestion}}</td>
             <td>{{s.answer}}</td>
             <td>{{s.phoneNo}}</td>
@@ -36,11 +36,11 @@
     
         </tr>
 
-        <tr>
+        <!-- <tr>
             <td><label for="email">Email</label></td>
             <td><input readonly name="email" type="email" [(ngModel)]="s.email" placeholder="Email"></td>
     
-        </tr>
+        </tr> -->
         <tr>
             <td><label for="secQuestion">Securtiy Question</label></td>
             <td><input readonly name="secQuestion" type="text" [(ngModel)]="s.securityQuestion" placeholder="Security Question"></td>

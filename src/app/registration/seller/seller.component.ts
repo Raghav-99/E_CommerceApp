@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup,Validators,ReactiveFormsModule, RequiredValidato
 import { Router } from '@angular/router';
 import { Seller } from 'src/app/models/seller';
 import { RegisterService } from 'src/app/services/register.service';
-//import { RegisterService} from "module";
 
 @Component({
   selector: 'app-seller',
@@ -49,8 +48,8 @@ export class SellerComponent implements OnInit {
 
   Register(statusCode:number)
   {
-    let sellerDetails:Seller = new Seller(this.SellerForm.value.UName, this.SellerForm.value.FName, this.SellerForm.value.phone, this.SellerForm.value.address, this.SellerForm.value.HintQue, this.SellerForm.value.Answer, "");
-    this._service.RegisterUserIntoIdentity(this.SellerForm.value.UName, this.SellerForm.value.Email, this.SellerForm.value.pwd, this.SellerForm.value.cpwd)
+    let sellerDetails:Seller = new Seller(this.SellerForm.value.FName,this.SellerForm.value.UName, this.SellerForm.value.HintQue, this.SellerForm.value.Answer, this.SellerForm.value.Phone, this.SellerForm.value.ShopName, this.SellerForm.value.ShopReg, this.SellerForm.value.Address);
+    this._service.RegisterUserIntoIdentity(this.SellerForm.value.UName, this.SellerForm.value.Email, this.SellerForm.value.Pwd, this.SellerForm.value.Cpwd)
     .subscribe(response => statusCode = response, (error) => console.log(error), () => {
       if(statusCode === 201) {
         this._service.RegisterSellerDetails(sellerDetails).subscribe(response => statusCode = response, (error) => {console.log("error: "+error)},
