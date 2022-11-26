@@ -26,8 +26,11 @@ export class LoginComponent implements OnInit {
   }
 
   Authenticate(statusCode:number) {
-  this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd).subscribe(response => statusCode = response, (error) => console.log(error), () => {
-    if(statusCode === 200) {this._route.navigate(['/about-us'])}
+    this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd).subscribe(response => statusCode = response, (error) => console.log(error), () => 
+    {
+    if(statusCode === 200) {
+      this._route.navigate(['/about-us'])
+    }
   });
 
   }

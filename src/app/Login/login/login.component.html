@@ -4,7 +4,6 @@
     <div class="login-main-text">
         <h2> WELCOME TO </h2>
         <h1>Login Page</h1><br>
-      
         <p>Login Page for <strong>User</strong> and <strong>Admin</strong></p>
     </div>
 </div>
@@ -15,11 +14,11 @@
 
             <h1>Select Your Role</h1>
 
-            <input type="radio" id="admin" name="roles" />Admin &nbsp;&nbsp;
-            <input type="radio" id="user" name="roles" />User &nbsp;&nbsp;
-            <input type="radio" id="seller" name="roles" />Seller&nbsp;&nbsp;<br><br>
+            <input type="radio" id="admin" name="roles" /><label for="admin">Admin</label> &nbsp;&nbsp;
+            <input type="radio" id="user" name="roles" /><label for="user">User</label> &nbsp;&nbsp;
+            <input type="radio" id="seller" name="roles" /><label for="seller">Seller</label>&nbsp;&nbsp;<br><br>
 
-            <form method="post" [formGroup]="loginForm" (ngSubmit)="Authenticate(401)">
+            <form [formGroup]="loginForm" (ngSubmit)="Authenticate(401)">
 
 
                 <div class="form-group">
