@@ -11,6 +11,7 @@ import { ForgotpageComponent } from './Forgotpwd/forgotpage/forgotpage.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
+import { RegisterService } from './services/register.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { LoginService } from './services/login.service';
     ReactiveFormsModule
   
   ],
-  providers: [UserService,LoginService],
+  providers: [UserService,LoginService,RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

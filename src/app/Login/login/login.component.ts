@@ -12,7 +12,6 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   uname = ""
   pwd = ""
-  statusCode:number = 404
 
   public loginForm!: FormGroup
   constructor(private fromBuilder: FormBuilder,private _service:LoginService, private _route:Router) {}
@@ -25,11 +24,14 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  Authenticate() {
-    this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd).subscribe(response => this.statusCode = response, (error) => console.log(error));
-    if(this.statusCode === 200) {
+  Authenticate(statusCode:number) {
+    this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd).subscribe(response => statusCode = response, (error) => console.log(error), () => 
+    {
+    if(statusCode === 200) {
       this._route.navigate(['/about-us'])
     }
+  });
+
   }
 
 
