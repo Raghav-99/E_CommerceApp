@@ -7,7 +7,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class SellersService {
 
-  Sellers = Array<Seller>();
+  // Sellers = Array<Seller>();
   url = 'http://localhost:5233/api/Seller';
   constructor(private http: HttpClient) {
   }
@@ -31,13 +31,13 @@ export class SellersService {
   }
   x:any={};
   updateSellerByIdFromAPI(username: string,c:Seller) {
-    return this.http.put(`${this.url}/${username}`,c,{
-           headers:new HttpHeaders({
-             'Content-Type':'application/json'
+    return this.http.put<Seller>(`${this.url}/${username}`,c,{
+          headers:new HttpHeaders({
+            'Content-Type':'application/json'
           })
         });
   }
   deleteSellerByIdFromAPI(id:string) {
-    return this.http.delete<Seller>(this.url + '/' + id);
+    return this.http.delete<Seller[]>(this.url + '/' + id);
   }
 }

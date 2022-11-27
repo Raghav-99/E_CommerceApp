@@ -27,14 +27,14 @@ export class UserService {
 
   x:any={};
   
-  updateUserByIdFromAPI(UId: string,c:User) {
-    return this.http.put(`${this.url+'user'}/${UId}`,c,{
+  updateUserByIdFromAPI(UId: string,user:User) {
+    return this.http.put<User>(`${this.url+'user'}/${UId}`,user,{
           headers:new HttpHeaders({
             'Content-Type':'application/json'
           })
         });
   }
   deleteUserByIdFromAPI(id: string) {
-    return this.http.delete<User>(this.url + 'user/' + id);
+    return this.http.delete<User[]>(this.url + 'user/' + id);
   }
 }
