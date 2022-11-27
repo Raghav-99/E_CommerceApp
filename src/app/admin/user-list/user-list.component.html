@@ -21,61 +21,9 @@
             <td><input type="text" [(ngModel)]= "c.answer"></td>
             <td><input type="text" [(ngModel)]= "c.phoneNumber"></td>
             <td><input type="text" [(ngModel)]= "c.modifiedBy"></td>
-    
-
-
-        </tr>
-    </tbody>
+            <td><button class="btn btn-warning" (click)="updateUserById(User.username)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteUserById(User.username)">Delete</button></td>
+          
 </table>
 
-<!-- !!!!! fields marked like this are readonly --> 
-<table class="table table-bordered table-warning table-hover">
-    <tbody>
-        <p>Usercrud Operations</p>
-            <tr>
-                <td><label for="uname">User Name</label></td>
-                <td><input name="uname" type="text" [(ngModel)]="User.username" placeholder="Username"></td>
-        
-            </tr>
 
-            <tr>
-                <td><label for="fname">Full Name</label></td>
-                <td><input name="fame" type="text" [(ngModel)]="User.fullName" placeholder="Full Name"></td>
-        
-            </tr>
-
-            <tr>
-                <!-- !!!!! -->
-                <td><label for="question">Security Question</label></td>
-                <td><input readonly name="question" type="text" [(ngModel)]="User.secQuestion"  placeholder="Security Question"></td>
-        
-            </tr>
-
-            <tr>
-                <!-- !!!!! -->
-                <td><label for="phoneNo">Phone Number</label></td>
-                <td><input readonly name="phoneNo" type="text" [(ngModel)]="User.phoneNumber"  placeholder="Phone Number"></td>
-        
-            </tr>
-
-
-            <tr>
-                <td><label for="modifiedBy">Modified By</label></td>
-                <td><input name="modifiedBy" type="text" [(ngModel)]="User.modifiedBy" placeholder="Modified By"></td>
-            </tr>
-            
-            <tr>
-                <!-- !!!!! -->
-                <td><label for="answer">Answer</label></td>
-                <td><input readonly name="answer" type="text" [(ngModel)]="User.answer" placeholder="Answer"></td>
-            </tr>
-        
-        
-    </tbody>
-
-</table>
-Operations
-<button class="btn btn-dark" (click)="getUserById(User.username)">Search</button> &nbsp; &nbsp;
-<button class="btn btn-warning" (click)="updateUserById(User.username)">Update</button> &nbsp; &nbsp;
-<button class="btn btn-danger" (click)="deleteUserById(User.username)">Delete</button>&nbsp; &nbsp;
-<!-- <button class="btn btn-success" (click)="addUser(u)">ADD</button> -->
