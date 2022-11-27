@@ -11,16 +11,16 @@ import { UserDashboardComponent } from './user/dashboard/dashboard.component';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
-  {path: "", redirectTo:"landingpage", pathMatch:"full"},
-  {path: "landingpage", component:LandingpageComponent},
-  {path: "login", component: LoginComponent},
-  {path:"contactus",component: ContactusComponent},
-  {path:"about-us",component: AboutUsComponent},
-  {path:"register-user",component: UserComponent},
-  {path:"dashboard", children: [
-    {path: "admin", component: DashboardComponent},
-    {path: "user", component: UserDashboardComponent}
-  ]},
+  // {path: "", redirectTo:"landingpage", pathMatch:"full"},
+  // {path: "landingpage", component:LandingpageComponent},
+  // {path: "login", component: LoginComponent},
+  // {path:"contactus",component: ContactusComponent},
+  // {path:"about-us",component: AboutUsComponent},
+  // {path:"register-user",component: UserComponent},
+  // {path:"dashboard", children: [
+  //   {path: "admin", component: DashboardComponent},
+  //   {path: "user", component: UserDashboardComponent}
+  // ]},
 ];
 
 @NgModule({

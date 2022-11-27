@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -25,7 +26,7 @@ export class UserDashboardComponent implements OnInit {
   Product = Array<Product>();
   // s:Product=new Product();
   msg: string = ''
-  constructor(private productService: ProductsService, private cartService: CartService) {
+  constructor(private productService: ProductsService, private cartService: CartService,private _route:Router) {
     this.getProductsFromService()
   }
   getProductsFromService() {
