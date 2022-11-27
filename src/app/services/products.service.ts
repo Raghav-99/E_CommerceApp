@@ -89,7 +89,7 @@ getProductsFromService(){
   constructor(private http:HttpClient) { }
   
   Product = Array<Product>();
-  url = 'http://localhost:3000/products/';
+  url = 'http://localhost:5233/api/Products';
   public search = new BehaviorSubject<string>("");
 
   getProductsFromAPI() {
