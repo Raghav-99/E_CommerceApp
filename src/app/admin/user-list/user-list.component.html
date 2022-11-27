@@ -1,9 +1,28 @@
 <p>User list</p>
 <table class="table table-bordered table-hover table-success">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>User Name</th>
+            <th>Security Question</th>
+            <th>Answer</th>
+            <th>Phone Number</th>
+            <th>Modified By</th>
+        </tr>
+    </thead>
+
+
     <tbody>
         <tr *ngFor="let c of ListOfUsers">
-            <td>{{c.username}}</td>
-            <td>{{c.secQuestion}}</td>
+
+            <td><input type="text" [(ngModel)]= "c.fullName"></td>
+            <td><input type="text" [(ngModel)]= "c.username"></td>
+            <td><input type="text" [(ngModel)]= "c.secQuestion"></td>
+            <td><input type="text" [(ngModel)]= "c.answer"></td>
+            <td><input type="text" [(ngModel)]= "c.phoneNumber"></td>
+            <td><input type="text" [(ngModel)]= "c.modifiedBy"></td>
+    
+
 
         </tr>
     </tbody>
@@ -14,8 +33,14 @@
     <tbody>
         <p>Usercrud Operations</p>
             <tr>
-                <td><label for="uname">UserName</label></td>
+                <td><label for="uname">User Name</label></td>
                 <td><input name="uname" type="text" [(ngModel)]="User.username" placeholder="Username"></td>
+        
+            </tr>
+
+            <tr>
+                <td><label for="fname">Full Name</label></td>
+                <td><input name="fame" type="text" [(ngModel)]="User.fullName" placeholder="Full Name"></td>
         
             </tr>
 
@@ -25,6 +50,14 @@
                 <td><input readonly name="question" type="text" [(ngModel)]="User.secQuestion"  placeholder="Security Question"></td>
         
             </tr>
+
+            <tr>
+                <!-- !!!!! -->
+                <td><label for="phoneNo">Phone Number</label></td>
+                <td><input readonly name="phoneNo" type="text" [(ngModel)]="User.phoneNumber"  placeholder="Phone Number"></td>
+        
+            </tr>
+
 
             <tr>
                 <td><label for="modifiedBy">Modified By</label></td>

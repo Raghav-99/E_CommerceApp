@@ -1,19 +1,28 @@
 <p>seller-list</p>
 <table class="table table-bordered table-primary table-hover">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>User Name</th>
+            <th>Security Question</th>
+            <th>Answer</th>
+            <th>Phone Number</th>
+            <th>Shop Nmae</th>
+            <th>Shop Registration Number</th>
+        </tr>
+    </thead>
    
     <tbody>
         
         <tr *ngFor="let s of Seller" (click)="getSellerById(s.username)">
-            <td>{{s.fullName}}</td>
-            <td>{{s.username}}</td>
-            <!-- <td>{{s.email}}</td> -->
-            <td>{{s.securityQuestion}}</td>
-            <td>{{s.answer}}</td>
-            <td>{{s.phoneNo}}</td>
-            <td>{{s.shopName}}</td>
-            <td>{{s.shopRegNo}}</td>
+            <td><input type="text" [(ngModel)]=  "s.fullName"></td>
+            <td><input type="text" [(ngModel)]= "s.username"></td>
+            <td><input type="text" [(ngModel)]= "s.securityQuestion"></td>
+            <td><input type="text" [(ngModel)]= "s.answer"></td>
+            <td><input type="text" [(ngModel)]= "s.phoneNo"></td>
+            <td><input type="text" [(ngModel)]= "s.shopName"></td>
+            <td><input type="text" [(ngModel)]= "s.shopRegNo"></td>
 
-            <!-- <td><button (click)="getSellerById(s.id)" class="btn btn-group-lg">click</button></td> -->
         </tr>
     
     </tbody>
