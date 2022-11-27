@@ -13,17 +13,16 @@
 
 
     <tbody>
-        <tr *ngFor="let c of ListOfUsers">
+        <tr *ngFor="let user of ListOfUsers">
 
-            <td><input type="text" [(ngModel)]= "c.fullName"></td>
-            <td><input type="text" [(ngModel)]= "c.username"></td>
-            <td><input type="text" [(ngModel)]= "c.secQuestion"></td>
-            <td><input type="text" [(ngModel)]= "c.answer"></td>
-            <td><input type="text" [(ngModel)]= "c.phoneNumber"></td>
-            <td><input type="text" [(ngModel)]= "c.modifiedBy"></td>
-            <td><button class="btn btn-warning" (click)="updateUserById(User.username)">Update</button></td>
-            <td><button class="btn btn-danger" (click)="deleteUserById(User.username)">Delete</button></td>
-          
+            <td><input type="text" [(ngModel)]= "user.fullName"></td>
+            <td><input type="text" [(ngModel)]= "user.username"></td>
+            <td><input type="text" [(ngModel)]= "user.secQuestion"></td>
+            <td><input type="text" [(ngModel)]= "user.answer"></td>
+            <td><input type="text" [(ngModel)]= "user.phoneNumber"></td>
+            <td><input type="text" [(ngModel)]= "user.modifiedBy"></td>
+            <td><button class="btn btn-warning" (click)="updateUserById(user.username, user)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteUserById(user.username)">Delete</button></td>
 </table>
 
 

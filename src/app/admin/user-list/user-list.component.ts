@@ -11,8 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserListComponent implements OnInit {
 
 ListOfUsers=Array<User>();
-User:User=new User();
-msg:string=''
+// User:User=new User();
+// msg:string=''
 constructor(private _cs:UserService) { }
 
 getUsersFromService() {
@@ -20,23 +20,23 @@ getUsersFromService() {
   .subscribe(response=>this.ListOfUsers =response);
 }
 
-getUserById(id:string){
-  this._cs.getUsersByIdFromAPI(id)
-  .subscribe(response=>this.User=response);
-}
+// getUserById(id:string){
+//   this._cs.getUsersByIdFromAPI(id)
+//   .subscribe(response=>this.User=response);
+// }
 
 deleteUserById(id:string){
   this._cs.deleteUserByIdFromAPI(id)
-  .subscribe(response=>this.User=response);
+  .subscribe(response=>this.ListOfUsers=response);
 }
 // addUser(u:User){
 //  this._cs.addUserFromAPI(this.u)
 //  .subscribe(response=>()=>this.msg="Row added successfully.");
 // }
 
-updateUserById(id:string){
-  this._cs.updateUserByIdFromAPI(id,this.User)
-  .subscribe(response=>()=>this.msg="Row updated successfully."); 
+updateUserById(id:string, user:User){
+  this._cs.updateUserByIdFromAPI(id, user)
+  .subscribe(response=> user=response); 
 }
 
 
