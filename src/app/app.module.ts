@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
+import { UserModule } from './user/user.module';
+import { UserDashboardComponent } from './user/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { RegisterService } from './services/register.service';
     AppRoutingModule,
     LandingPageModule,
     AdminModule,HttpClientModule,RegistrationModule,FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,UserModule
+    
   
   ],
   providers: [UserService,LoginService,RegisterService],
