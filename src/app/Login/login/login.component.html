@@ -14,9 +14,9 @@
 
             <h1>Select Your Role</h1>
 
-            <input type="radio" id="admin" name="roles" /><label for="admin">Admin</label> &nbsp;&nbsp;
-            <input type="radio" id="user" name="roles" /><label for="user">User</label> &nbsp;&nbsp;
-            <input type="radio" id="seller" name="roles" /><label for="seller">Seller</label>&nbsp;&nbsp;<br><br>
+            <input type="radio" id="admin" name="roles" value="1" [(ngModel)]="RoleId" /><label for="admin">Admin</label> &nbsp;&nbsp;
+            <input type="radio" id="seller" name="roles" value="2" [(ngModel)]="RoleId" /><label for="seller">Seller</label> &nbsp;&nbsp;
+            <input type="radio" id="user" name="roles" value="3" [(ngModel)]="RoleId" /><label for="user">User</label>&nbsp;&nbsp;<br><br>
 
             <form [formGroup]="loginForm" (ngSubmit)="Authenticate(401)">
 

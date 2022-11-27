@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -7,16 +8,11 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
-  product: any[]=[];
+  product: Product[]=new Array<Product>();
 
-  constructor(private products:ProductsService,) { 
-        this.product = this.products.getProductsFromService();
-
-  }
+  constructor(private _service:ProductsService,) { }
   
   ngOnInit(): void {
+    this._service.getProductsFromAPI().subscribe(response => this.product = response);
   }
-
-  
-
 }

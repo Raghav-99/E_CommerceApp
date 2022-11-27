@@ -8,7 +8,9 @@ export class LoginService {
   url = "http://localhost:5233/api/Account"
   constructor(private _http:HttpClient) { }
   
-  Authenticate(username:string, password:string) {
-    return this._http.post<number>(this.url+'/login', {username, password});
+  Authenticate(username:string, password:string, roleId:string) {
+    return this._http.post<number>(this.url+'/login', {username, password}, {
+      params: {roleId: roleId}
+    });
   }
 }

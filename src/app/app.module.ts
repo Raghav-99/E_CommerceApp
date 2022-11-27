@@ -25,10 +25,13 @@ import { UserDashboardComponent } from './user/dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     LandingPageModule,
-    AdminModule,HttpClientModule,RegistrationModule,FormsModule,
-    ReactiveFormsModule,UserModule
-    
-  
+    AdminModule,
+    HttpClientModule,
+    RegistrationModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UserModule,
+    AdminModule
   ],
   providers: [UserService,LoginService,RegisterService],
   bootstrap: [AppComponent]

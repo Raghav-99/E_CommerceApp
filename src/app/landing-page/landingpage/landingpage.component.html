@@ -25,10 +25,10 @@
              -->
              <div class="input-group">
                 <div class="form-outline">
-                    <input type="search" id="form1" class="form-control" />
+                    <input type="search" id="form1" class="form-control" placeholder="Search items" />
                     <!-- <label class="form-label" for="form1">Search</label> -->
                 </div>
-                <button type="button" class="btn btn-primary">
+                <button type="button" title="Search" class="btn btn-primary">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -87,11 +87,11 @@
     <div class="row">
         <ng-container *ngFor="let item of product ">
             <div class="card col-md-3">
-                <img src="{{item.image}}" alt="">
+                <img src="{{item.imageUrl}}" alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
-                    {{item.title}}</h5>
+                    {{item.productName}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
-                    {{item.description}}</p>
+                    {{item.productDescription}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
                 <button class="btn btn-primary">Add to cart</button>
             </div>

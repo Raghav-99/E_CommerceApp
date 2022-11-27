@@ -21,15 +21,15 @@ export class UserDashboardComponent implements OnInit {
   // constructor(private products:ProductsService, private cartService:CartService) {
   //   this.product = this.products.getProductsFromService();
   //  }
- 
+
   Product = Array<Product>();
   // s:Product=new Product();
   msg: string = ''
-  constructor(private products: ProductsService, private cartService: CartService) {
+  constructor(private productService: ProductsService, private cartService: CartService) {
     this.getProductsFromService()
   }
   getProductsFromService() {
-    this.products.getProductsFromAPI()
+    this.productService.getProductsFromAPI()
       .subscribe(response => this.Product = response);
   }
   

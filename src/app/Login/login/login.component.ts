@@ -13,7 +13,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   uname = ""
   pwd = ""
-
+  RoleId = ""
   public loginForm!: FormGroup
   constructor(private fromBuilder: FormBuilder,private _service:LoginService, private _route:Router) {}
 
@@ -26,11 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   Authenticate(statusCode:number) {
-    this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd).subscribe(response => statusCode = response, (error) => console.log(error), () => 
+    console.log(this.RoleId)
+    this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd, this.RoleId).subscribe(response => statusCode = response, (error) => console.log(error), () => 
     {
-    if(statusCode === 200) {
-      this._route.navigate(['/about-us'])
+    if(statusCode === 302 && this.RoleId != "") {
+      if(this.RoleId === "1") {this._route.navigate(['/dashboard/admin']);}
+      //! change route for seller when seller component is done
+      else if(this.RoleId === "2") {this._route.navigate(['/about-us']);}
+      else if(this.RoleId === "3") { this._route.navigate(['/dashboard/user']);}
     }
+    else {alert("Invalid login credentials!")}
   });
 
   }
