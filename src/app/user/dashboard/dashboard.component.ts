@@ -78,4 +78,13 @@ export class UserDashboardComponent implements OnInit {
             })
         }
 
+        Editprofile()
+        {
+          this._route.navigate(['/editpage']);
+        }
+        Logout()
+        {
+          this._route.navigate(['/landingpage']);
+        }
+
       }

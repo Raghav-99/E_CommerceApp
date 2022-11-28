@@ -34,7 +34,7 @@
     </div>
     <div class="bg-dark" id="navbarToggleExternalContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
         <div class="navbar-brand">
-            <button type="button " class="btn btn-primary btn1">
+            <button type="button " class="btn btn-primary btn1" (click)="Editprofile()">
                 <span> Edit Profile</span>
             </button> &nbsp;
             <button type="button  " class="btn btn-primary btn1">
@@ -43,7 +43,7 @@
              <!-- <button type="button " class="btn btn-primary btn1">
                 <span>History</span> 
             </button> &nbsp; -->
-            <button type="button " class="btn btn-primary btn1">
+            <button type="button " class="btn btn-primary btn1" (click)="Logout()">
                 <span>logout</span>
             </button> &nbsp;
         </div>

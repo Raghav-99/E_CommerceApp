@@ -9,6 +9,7 @@ import { LoginComponent } from './Login/login/login.component';
 import { IndexComponent } from './registration/index/index.component';
 import { UserComponent } from './registration/user/user.component';
 import { UserDashboardComponent } from './user/dashboard/dashboard.component';
+import { EditpageComponent } from './user/editpage/editpage.component';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: "landingpage", component:LandingpageComponent},
   {path: "login", component: LoginComponent},
   {path:"contactus",component: ContactusComponent},
+  {path:"editpage",component:EditpageComponent},
   {path:"about-us",component: AboutUsComponent},
   {path:"register-user",component: UserComponent},
   {path:"register-index",component:IndexComponent},
