@@ -60,7 +60,7 @@ export class UserDashboardComponent implements OnInit {
         filters(category: string) {
           this.filterCategory = this.Product
             .filter((a: any) => {
-              if (a.category == category || category == '') {
+              if (a.productType == category || category == '') {
                 return a;
               }
             })
