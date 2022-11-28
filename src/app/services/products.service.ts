@@ -24,6 +24,8 @@ getProductsFromService(){
   getProductsByIdFromAPI(id: number) {
     return this.http.get<Product>(this.url + '/' + id);
   }
+
+ 
 }
 
 

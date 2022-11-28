@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -19,30 +19,63 @@ export class UserDashboardComponent implements OnInit {
     this.collapsed = !this.collapsed;
   }
   a: string = 'home';
-  // constructor(private products:ProductsService, private cartService:CartService) {
-  //   this.product = this.products.getProductsFromService();
-  //  }
+  searchKey: string = '';
+  //filterCategory: any
 
   Product = Array<Product>();
   // s:Product=new Product();
   msg: string = ''
-  constructor(private productService: ProductsService, private cartService: CartService,private _route:Router) {
+  constructor(private productService: ProductsService, private cartService: CartService, private _route: Router) {
     this.getProductsFromService()
   }
   getProductsFromService() {
     this.productService.getProductsFromAPI()
-      .subscribe(response => this.Product = response);
-  }
+      .subscribe(response => {
+        this.Product = response;
+        this.filterCategory = response;
+        this.Product.forEach((a: any) => {
+          if (a.category === "women's clothing" || a.category === "men's clothing") {
+            a.category = "fashion"
+          }
+          Object.assign(a, { quantity: 1, total: a.price });
+        }
+        )
+      }
+      )
+    }
+  
   
   addtocart(item: any) {
-    this.cartService.addtoCart(item);
-  }
-  
-  ngOnInit(): void {
-    this.cartService.getProducts()
-      .subscribe(res => {
-        this.totalItem = res.length;
-      })
-  }
+          this.cartService.addtoCart(item);
+        }
 
-}
+  
+  search(event: any) {
+          this.searchTerm = (event.target as HTMLInputElement).value;
+          console.log(this.searchTerm);
+          this.productService.search.next(this.searchTerm);
+        }
+
+  public filterCategory: any;
+        filters(category: string) {
+          this.filterCategory = this.Product
+            .filter((a: any) => {
+              if (a.category == category || category == '') {
+                return a;
+              }
+            })
+          console.log(this.filterCategory)
+        }
+
+
+        ngOnInit(): void {
+          this.productService.search.subscribe((val: any) => {
+            this.searchKey = val;
+          });
+          this.cartService.getProducts()
+            .subscribe(res => {
+              this.totalItem = res.length;
+            })
+        }
+
+      }
