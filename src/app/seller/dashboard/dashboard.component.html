@@ -1,0 +1,55 @@
+<h1>Seller Dashboard</h1>
+
+
+
+<header class="header">
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-store">&nbsp; </i>
+            <strong style="font-size: 30px; "><a (click)="a = 'home'" style="color:beige; text-decoration:none" href="#id1">ANYTIME PROM</a></strong>
+            <div class="flex-row align-items-center">
+                <div class="form-group ">
+                    <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" class="form-control" placeholder="search products">
+                     
+         
+                </div>
+
+            </div>
+            <button type="button " class="btn btn-primary btn1">
+                <i class="fas fa-search"></i>
+            </button>
+
+        </div>
+        <div class="flex-row align-items-end">
+            <button (click)="a = 'cart'" id="cart" routerLink="cart" class="btn btn-close-white">
+                <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                (click)="toggleCollapsed()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </div>
+    <div class="bg-dark" id="navbarToggleExternalContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+        <div class="navbar-brand">
+            <button type="button " class="btn btn-primary btn1" (click)="Editprofile()">
+                <span> Edit Profile</span>
+            </button> &nbsp;
+            <button type="button  " class="btn btn-primary btn1">
+                <span>Orders History</span>
+            </button> &nbsp;
+             <!-- <button type="button " class="btn btn-primary btn1">
+                <span>History</span> 
+            </button> &nbsp; -->
+            <button type="button " class="btn btn-primary btn1" (click)="Logout()">
+                <span>logout</span>
+            </button> &nbsp;
+        </div>
+    </div>
+</header>
+
+

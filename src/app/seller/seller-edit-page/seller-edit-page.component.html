@@ -1,0 +1,75 @@
+<p>seller-edit-page works!</p>
+
+
+<table class="table table-bordered">
+    <tbody>
+        <tr *ngFor="let c of ListOfUsers">
+            <td>{{c.username}}</td>
+            <td>{{c.fullName}}</td>
+            <td>{{c.phoneNumber}}</td>
+            <td>{{c.address}}</td>
+            <td>{{c.secQuestion}}</td>
+            <td>{{c.answer}}</td>
+            <td>{{c.modifiedBy}}</td>
+    
+    
+        </tr>
+    </tbody>
+    <tbody>
+        <p>Usercrud Operations</p>
+            <tr>
+                <td><label for="uname">UserName</label></td>
+                <td><input name="uname" type="text" [(ngModel)]="User.username" placeholder="Username"></td>
+    
+            </tr>
+    
+            <tr>
+                <td><label for="fname">Full Name</label></td>
+                <td><input name="fame" type="text" [(ngModel)]="User.fullName" placeholder="Full Name"></td>
+    
+            </tr>
+    
+            <tr>
+                <!-- !!!!! -->
+                <td><label for="question">Security Question</label></td>
+                <td><input readonly name="question" type="text" [(ngModel)]="User.secQuestion"  placeholder="Security Question"></td>
+    
+            </tr>
+    
+            <tr>
+                <!-- !!!!! -->
+                <td><label for="answer">Answer</label></td>
+                <td><input readonly name="answer" type="text" [(ngModel)]="User.answer" placeholder="Answer"></td>
+            </tr>
+        
+    
+            <tr>
+                <!-- !!!!! -->
+                <td><label for="phoneNo">Phone Number</label></td>
+                <td><input readonly name="phoneNo" type="text" [(ngModel)]="User.phoneNumber"  placeholder="Phone Number"></td>
+    
+            </tr>
+    
+    
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td><input name="address" type="text" [(ngModel)]="User.address" placeholder="Address"></td>
+            </tr>
+            
+    
+            
+    
+            <tr>
+                <td><label for="modifiedBy">Modified By</label></td>
+                <td><input name="modifiedBy" type="text" [(ngModel)]="User.modifiedBy" placeholder="Modified By"></td>
+            </tr>
+         
+        
+       </tbody>
+    </table><br><br>
+    
+    Operations
+    
+    <button class="btn btn-warning" (click)="updateUserById(User.username)">Update</button> &nbsp; &nbsp;
+    <button class="btn btn-danger" (click)="deleteUserById(User.username)">Delete</button>&nbsp; &nbsp;
+    <!-- <button class="btn btn-success" (click)="addUser(u)">ADD</button> -->
