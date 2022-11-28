@@ -40,7 +40,7 @@ export class EditpageComponent implements OnInit {
   
   
     ngOnInit(): void {
-      // this.getUsersFromService()
+      this.getUserById("raghavme")
     }
   
   }
