@@ -6,40 +6,42 @@ import { SellersService } from 'src/app/services/sellers.service';
   templateUrl: './seller-edit-page.component.html',
   styleUrls: ['./seller-edit-page.component.css']
 })
-export class SellerEditPageComponent implements OnInit {
+export class  SellerEditPageComponent implements OnInit {
 
-  // ListOfUsers=Array<User>();
-  // User:User=new User();
-  // msg:string=''
-  // constructor(private _cs:SellerService) { }
+  ListOfSeller=Array<Seller>();
+  Seller:Seller=new Seller();
+  msg:string=''
+  constructor(private _cs:SellersService) {
+    
+   }
   
-  // getUsersFromService() {
-  //   this._cs.getUsersFromAPI()
-  //   .subscribe(response=>this.ListOfUsers =response);
-  // }
+  getSellersFromService() {
+    this._cs.getSellersFromAPI()
+    .subscribe(response=>this.ListOfSeller =response);
+  }
   
-  // getUserById(id:string){
-  //   this._cs.getUsersByIdFromAPI(id)
-  //   .subscribe(response=>this.User=response);
-  // }
+  getSellerById(id:string){
+    this._cs.getSellersByIdFromAPI(id)
+    .subscribe(response=>this.Seller=response);
+  }
   
-  // deleteUserById(id:string){
-  //   this._cs.deleteUserByIdFromAPI(id)
-  //   .subscribe(response=>this.ListOfUsers=response);
-  // }
-  // addUser(u:User){
-  //  this._cs.addUserFromAPI(this.u)
-  //  .subscribe(response=>()=>this.msg="Row added successfully.");
-  // }
+  deleteSellerById(id:string){
+    this._cs.deleteSellerByIdFromAPI(id)
+    .subscribe(response=>this.ListOfSeller=response);
+  }
+  addSeller(s:Seller){
+   this._cs.addSellerFromAPI(s)
+   .subscribe(response=>()=>this.msg="Row added successfully.");
+  }
   
-  // updateUserById(id:string){
-  //   this._cs.updateUserByIdFromAPI(id,this.User)
-  //   .subscribe(response=>()=>this.msg="Row updated successfully."); 
-  // }
+  updateSellerById(id:string){
+    this._cs.updateSellerByIdFromAPI(id,this.Seller )
+    .subscribe(response=>()=>this.msg="Row updated successfully."); 
+  }
   
   
     ngOnInit(): void {
-      // this.getUsersFromService()
+      this.getSellersFromService()
     }
   
   }

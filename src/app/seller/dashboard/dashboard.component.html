@@ -1,6 +1,4 @@
-<h1>Seller Dashboard</h1>
-
-
+ <h1>Seller Dashboard</h1>
 
 <header class="header">
     <div class="navbar navbar-dark bg-dark shadow-sm">
@@ -40,16 +38,34 @@
                 <span> Edit Profile</span>
             </button> &nbsp;
             <button type="button  " class="btn btn-primary btn1">
-                <span>Orders History</span>
+                <span>Payment History</span>
             </button> &nbsp;
-             <!-- <button type="button " class="btn btn-primary btn1">
-                <span>History</span> 
-            </button> &nbsp; -->
+            <button type="button " class="btn btn-primary btn1">
+                <span>Add Product</span> 
+            </button> &nbsp; 
             <button type="button " class="btn btn-primary btn1" (click)="Logout()">
                 <span>logout</span>
             </button> &nbsp;
         </div>
     </div>
 </header>
+
+<div class="container">
+    <div class="row ">
+        <ng-container *ngFor="let item of Product ">
+        <!-- <ng-container *ngFor="let item of Product "> -->
+            <div class="card col-sm-4 col-md-3 col-xl-2">
+                <img class="img-fluid" src="{{item.imageUrl}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.productName}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.productDescription}}</p>
+                <p><strong>Price:</strong> ₹{{item.price}}</p>
+                <!-- <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button> -->
+            </div>
+        </ng-container>
+
+    </div>
+</div>
 
 
