@@ -25,6 +25,9 @@ getProductsFromService(){
     return this.http.get<Product>(this.url + '/' + id);
   }
 
+  InsertProduct(product : Product) {
+    this.http.post<Product>(this.url, product);
+  }
  
 }
 
