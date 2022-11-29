@@ -4,6 +4,7 @@ import { SellerDashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SellerEditPageComponent } from './seller-edit-page/seller-edit-page.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { PaymenthistoryComponent } from './Paymenthistory/paymenthistory.component';
 
 
 
@@ -11,7 +12,8 @@ import { AddproductComponent } from './addproduct/addproduct.component';
   declarations: [
     SellerDashboardComponent,
     SellerEditPageComponent,
-    AddproductComponent
+    AddproductComponent,
+    PaymenthistoryComponent
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule

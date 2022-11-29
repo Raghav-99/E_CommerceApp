@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,Validators } from '@angular/forms';{}
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; { }
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/services/login.service';
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.loginForm=this.fromBuilder.group ({
       uname:['',Validators.required],
       pwd:['',Validators.required]
-      
+
     })
   }
 
@@ -49,5 +49,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-
+  
 }
+
+
