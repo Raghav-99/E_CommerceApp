@@ -30,10 +30,19 @@ export class LoginComponent implements OnInit {
     this._service.Authenticate(this.loginForm.value.uname, this.loginForm.value.pwd, this.RoleId).subscribe(response => statusCode = response, (error) => console.log(error), () => 
     {
     if(statusCode === 302 && this.RoleId != "") {
-      if(this.RoleId === "1") {this._route.navigate(['/dashboard/admin']);}
+      if(this.RoleId === "1") {
+        this._route.navigate(['/dashboard/admin']);
+      }
       //! change route for seller when seller component is done
-      else if(this.RoleId === "2") {this._route.navigate(['/about-us']);}
-      else if(this.RoleId === "3") { this._route.navigate(['/dashboard/user']);}
+      else if(this.RoleId === "2") {
+        this._route.navigate(['/about-us']);
+        window.sessionStorage.setItem("roleId", "2")
+        }
+      else if(this.RoleId === "3") {
+        this._route.navigate(['/dashboard/user']); 
+        window.sessionStorage.setItem("roleId", "3")
+      }
+      window.sessionStorage.setItem("authenticatedUser", this.loginForm.value.uname);
     }
     else {alert("Invalid login credentials!")}
   });

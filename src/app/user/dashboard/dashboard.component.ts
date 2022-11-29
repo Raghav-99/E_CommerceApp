@@ -40,49 +40,52 @@ export class UserDashboardComponent implements OnInit {
         )
       }
       )
-    }
-  
-  
-  addtocart(item: any) {
-          this.cartService.addtoCart(item);
-        }
+  }
 
-  
+
+  addtocart(item: any) {
+    this.cartService.addtoCart(item);
+  }
+
+
   search(event: any) {
-          this.searchTerm = (event.target as HTMLInputElement).value;
-          console.log(this.searchTerm);
-          this.productService.search.next(this.searchTerm);
-        }
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.productService.search.next(this.searchTerm);
+  }
 
   public filterCategory: any;
-        filters(category: string) {
-          this.filterCategory = this.Product
-            .filter((a: any) => {
-              if (a.productType == category || category == '') {
-                return a;
-              }
-            })
-          console.log(this.filterCategory)
+  filters(category: string) {
+    this.filterCategory = this.Product
+      .filter((a: any) => {
+        if (a.productType == category || category == '') {
+          return a;
         }
+      })
+    console.log(this.filterCategory)
+  }
 
 
-        ngOnInit(): void {
-          this.productService.search.subscribe((val: any) => {
-            this.searchKey = val;
-          });
-          this.cartService.getProducts()
-            .subscribe(res => {
-              this.totalItem = res.length;
-            })
-        }
+  Editprofile() {
+    this._route.navigate(['/editpage']);
+  }
+  Logout() {
+    this._route.navigate(['/landingpage']);
+  }
 
-        Editprofile()
-        {
-          this._route.navigate(['/editpage']);
-        }
-        Logout()
-        {
-          this._route.navigate(['/landingpage']);
-        }
+  ngOnInit(): void {
+    if(window.sessionStorage.getItem("authenticatedUser") != null && window.sessionStorage.getItem("roleId") === "3") {
+      this.productService.search.subscribe((val: any) => {
+        this.searchKey = val;
+      });
+      this.cartService.getProducts()
+        .subscribe(res => {
+          this.totalItem = res.length;
+        })
+    }
+    else {
+      this._route.navigate(['/login'])
+    }
+  }
 
-      }
+}
