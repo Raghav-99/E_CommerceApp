@@ -8,7 +8,7 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class SellerDashboardComponent implements OnInit {
 
   public totalItem: number = 0;
   public searchTerm !: string;
@@ -71,6 +71,11 @@ export class DashboardComponent implements OnInit {
         Editprofile()
         {
           this._route.navigate(['/editpage']);
+        }
+
+        Addproduct()
+        {
+          this._route.navigate(['/addproduct']);
         }
         Logout()
         {
