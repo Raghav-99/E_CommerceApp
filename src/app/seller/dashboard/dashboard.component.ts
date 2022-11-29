@@ -24,7 +24,7 @@ export class SellerDashboardComponent implements OnInit {
   // s:Product=new Product();
   msg: string = ''
   constructor(private productService: ProductsService,  private _route: Router) {
-    this.getProductsFromService()
+     this.getProductsFromService()
   }
   getProductsFromService() {
     this.productService.getProductsFromAPI()
