@@ -1,0 +1,36 @@
+<p>Dispatch Items Page</p>
+<table class="table table-bordered table-primary table-hover">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>User Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+        </tr>
+    </thead>
+   
+    <tbody>
+        
+        <tr *ngFor="let s of ListOfSeller">
+            <td><input type="text" [(ngModel)]= "s.fullName"></td>
+            <td><input type="text" [(ngModel)]= "s.username"></td>
+            <td><input type="text" [(ngModel)]= "s.phoneNo"></td>
+            <td><input type="text" [(ngModel)]= "s.address"></td>
+            <td><input type="text" [(ngModel)]= "s.productName"></td>
+            <td><input type="text" [(ngModel)]= "s.imageUrl"></td>
+            
+            <td><button class="btn btn-warning" (click)="updateSellerById(s.username, s)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteSellerById(s.username)">Delete</button></td>
+
+        </tr>
+    
+    </tbody>
+
+</table>
+
+
+
+
+

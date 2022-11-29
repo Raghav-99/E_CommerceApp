@@ -35,9 +35,9 @@ export class AddproductComponent implements OnInit {
   })
 }
   // wip: insert product
-  Register()
-  {
-    this._service.InsertProduct()
+  // Register()
+  // {
+  //   this._service.InsertProduct()
 
-  }
+  // }
 }
