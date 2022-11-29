@@ -26,7 +26,7 @@ export class EditpageComponent implements OnInit {
   
   deleteUserById(id:string){
     this._cs.deleteUserByIdFromAPI(id)
-    .subscribe(response=>this.User=response);
+    .subscribe(response=>this.ListOfUsers=response);
   }
   // addUser(u:User){
   //  this._cs.addUserFromAPI(this.u)
@@ -40,7 +40,7 @@ export class EditpageComponent implements OnInit {
   
   
     ngOnInit(): void {
-      this.getUsersFromService()
+      this.getUserById("raghavme")
     }
   
   }

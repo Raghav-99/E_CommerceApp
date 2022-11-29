@@ -13,7 +13,9 @@ import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
 import { UserModule } from './user/user.module';
-import { UserDashboardComponent } from './user/dashboard/dashboard.component';
+// import { UserDashboardComponent } from './user/dashboard/dashboard.component';
+import { SellerModule } from './seller/seller.module';
+import { SellersService } from './services/sellers.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,9 @@ import { UserDashboardComponent } from './user/dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule,
     UserModule,
-    AdminModule
+    AdminModule,SellerModule,
   ],
-  providers: [UserService,LoginService,RegisterService],
+  providers: [UserService,LoginService,RegisterService,SellersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

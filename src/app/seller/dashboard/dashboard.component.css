@@ -1,29 +1,36 @@
-
-
-@media only screen and (min-width: 1015px){
+  
+@media only screen and (min-width: 1000px){
     .form-control {
         border-radius: 3px;
         width: 600px;
         margin-left: 20px;
     }
-    .btn1{
-        margin-block-end: auto;
-        background-color: #384e6f00;
-     }
+    .search-icon {
+        position: absolute;
+        z-index: 10;
+        right: 27%;
+        top: 23px;
+        color: blue;
+    }
 }
-
-@media only screen and (max-width: 1015px){
+@media only screen and (max-width: 1000px){
     .form-control {
         border-radius: 3px;
-        /* width: 600px; */
+        width: 600px;
         margin-left: 20px;
     }
-      .btn1{
-        margin-block-end: auto;
-        background-color: #060606;
-     }
+    .search-icon {
+        position: absolute;
+        z-index: 10;
+        right: 27%;
+        top: 23px;
+        color: blue;
+    }
 }
-
+.btn-primary{
+    margin-block-end: auto;
+}
+ 
  .card-top {
     position: relative;
     display: flex;
@@ -51,8 +58,7 @@
 
 .card {
     padding: 20px;
-    margin: 15px;
-    margin-top: 20px;
+    margin: 50px;
 }
 
 .card img {

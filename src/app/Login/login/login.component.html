@@ -1,23 +1,28 @@
-<div class="sidenav">
+ <div class="sidenav">
     <h2 class="dt" id="date"></h2>
 
     <div class="login-main-text">
         <h2> WELCOME TO </h2>
-        <h1>Login Page</h1><br>
-        <p>Login Page for <strong>User</strong> and <strong>Admin</strong></p>
+        <h1>Login Portal</h1><br>
+        <p>Login Page for <strong>Admin</strong> &nbsp;<strong>User</strong> and <strong>Seller</strong>  </p>
     </div>
+
 </div>
 
 <div class="main">
     <div class="col-md-6 col-sm-12">
         <div class="login-form">
 
+            
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR3ugxZujjIQCakPXQyiYOjbhVwRYdk6peA&usqp=CAU" alt="website_logo" id="favi" class="img-fluid img"><br><br>
+    
+
             <h1>Select Your Role</h1>
 
             <input type="radio" id="admin" name="roles" value="1" [(ngModel)]="RoleId" /><label for="admin">Admin</label> &nbsp;&nbsp;
             <input type="radio" id="seller" name="roles" value="2" [(ngModel)]="RoleId" /><label for="seller">Seller</label> &nbsp;&nbsp;
             <input type="radio" id="user" name="roles" value="3" [(ngModel)]="RoleId" /><label for="user">User</label>&nbsp;&nbsp;<br><br>
-
+            
             <form [formGroup]="loginForm" (ngSubmit)="Authenticate(401)">
 
 
@@ -43,6 +48,8 @@
                 <button type="submit" [disabled]="!loginForm.valid" class="btn- btn-primary mt-3">Login</button>
 
             </form>
+            <a class="nav-item nav-link" routerLink="/register-index" routerLinkActive="active">New Registration</a>     
         </div>
     </div>
-</div>
+</div> 
+

@@ -1,0 +1,21 @@
+<h1>Welcome to New Role Registration Page</h1>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+      
+
+            <h1>Select Your Role</h1>
+
+            
+            <input type="radio" id="seller" name="roles" value="2" [(ngModel)]="RoleId" /><label for="seller">Seller</label> &nbsp;&nbsp;
+            <input type="radio" id="user" name="roles" value="3" [(ngModel)]="RoleId" /><label for="user">User</label>&nbsp;&nbsp;<br><br>
+
+            <div *ngIf="RoleId == '2'">
+                <app-seller></app-seller>
+            </div>
+
+            <div *ngIf="RoleId == '3'">
+                <app-user></app-user>
+            </div>
+
+    </div>
+</div>

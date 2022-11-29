@@ -1,6 +1,6 @@
 export class Seller{
     fullName:string='';
-    username:string='';
+    sellername:string='';
     //email:string='';
     securityQuestion:string='';
     answer:string='';
@@ -12,7 +12,7 @@ export class Seller{
     constructor(fullname?:string, Username?:string,/*email?:string,*/secQuestion?:string,Answer?:string,Phoneno?:string,
     Shopname?:string,Shopno?:string,address?:string){
         this.fullName=fullname||'';
-        this.username=Username||'';
+        this.sellername=Username||'';
         //this.email=email||'';
         this.securityQuestion=secQuestion||'';
         this.answer=Answer||'';
