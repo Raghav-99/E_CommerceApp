@@ -4,7 +4,7 @@
 <table class="table table-bordered">
     <tbody>
         <tr *ngFor="let c of ListOfSeller">
-            <td>{{c.username}}</td>
+            <td>{{c.sellername}}</td>
             <td>{{c.fullName}}</td>
             <td>{{c.phoneNo}}</td>
             <td>{{c.address}}</td>
@@ -19,7 +19,7 @@
         <p>Usercrud Operations</p>
             <tr>
                 <td><label for="uname">Seller Name</label></td>
-                <td><input name="uname" type="text" [(ngModel)]="Seller.username" placeholder="Username"></td>
+                <td><input name="uname" type="text" [(ngModel)]="Seller.sellername" placeholder="Username"></td>
     
             </tr>
     
@@ -70,6 +70,6 @@
     
     Operations
     
-    <button class="btn btn-warning" (click)="updateSellerById(Seller.username)">Update</button> &nbsp; &nbsp;
-    <button class="btn btn-danger" (click)="deleteSellerById(Seller.username)">Delete</button>&nbsp; &nbsp;
+    <button class="btn btn-warning" (click)="updateSellerById(Seller.sellername)">Update</button> &nbsp; &nbsp;
+    <button class="btn btn-danger" (click)="deleteSellerById(Seller.sellername)">Delete</button>&nbsp; &nbsp;
     

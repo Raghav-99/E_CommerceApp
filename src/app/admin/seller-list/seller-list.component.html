@@ -16,14 +16,14 @@
         
         <tr *ngFor="let s of ListOfSeller">
             <td><input type="text" [(ngModel)]= "s.fullName"></td>
-            <td><input type="text" [(ngModel)]= "s.username"></td>
+            <td><input type="text" [(ngModel)]= "s.sellername"></td>
             <td><input type="text" [(ngModel)]= "s.securityQuestion"></td>
             <td><input type="text" [(ngModel)]= "s.answer"></td>
             <td><input type="text" [(ngModel)]= "s.phoneNo"></td>
             <td><input type="text" [(ngModel)]= "s.shopName"></td>
             <td><input type="text" [(ngModel)]= "s.shopRegNo"></td>
-            <td><button class="btn btn-warning" (click)="updateSellerById(s.username, s)">Update</button></td>
-            <td><button class="btn btn-danger" (click)="deleteSellerById(s.username)">Delete</button></td>
+            <td><button class="btn btn-warning" (click)="updateSellerById(s.sellername, s)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteSellerById(s.sellername)">Delete</button></td>
 
         </tr>
     
