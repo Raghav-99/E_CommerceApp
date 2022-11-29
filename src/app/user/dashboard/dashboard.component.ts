@@ -1,5 +1,3 @@
-
-
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -34,8 +32,8 @@ export class UserDashboardComponent implements OnInit {
         this.Product = response;
         this.filterCategory = response;
         this.Product.forEach((a: any) => {
-          if (a.category === "women's clothing" || a.category === "men's clothing") {
-            a.category = "fashion"
+          if (a.productType === "women's clothing" || a.productType === "men's clothing") {
+            a.productType = "fashion"
           }
           Object.assign(a, { quantity: 1, total: a.price });
         }
