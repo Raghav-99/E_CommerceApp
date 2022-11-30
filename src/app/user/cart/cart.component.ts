@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -8,9 +9,9 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
- public products: any = [];
+  public products: any = [];
   public grandTotal !: number;
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private _route:Router ) { }
   mySet:any
   ngOnInit(): void {
     this.cartService.getProducts()
@@ -30,6 +31,9 @@ export class CartComponent implements OnInit {
         }
       })
   }
+  paymentpage(){
+    this._route.navigate(['/paymentpage'])
+  }
   getTotal() {
     let total = 0;
     for (var i = 0; i < this.products.length; i++) {
@@ -43,10 +47,10 @@ export class CartComponent implements OnInit {
   removeItem(item: any) {
     this.cartService.removeCartItem(item);
   }
+  
   emptycart() {
     this.cartService.removeAllCart();
   }
-  
   getQuantity(product:any) {
     let quantity = 0;
     for (var i = 0; i < this.products.length; i++) {
@@ -55,6 +59,11 @@ export class CartComponent implements OnInit {
     }
     return quantity;
   }
-   
+   updateQuantity(){
+    for (var i=0;i<this.products.length;i++){
+        console.log(this.products[i])
+
+    }
+   }
 
 }

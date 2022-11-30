@@ -16,6 +16,7 @@ import { UserModule } from './user/user.module';
 // import { UserDashboardComponent } from './user/dashboard/dashboard.component';
 import { SellerModule } from './seller/seller.module';
 import { SellersService } from './services/sellers.service';
+import { FiltersPipe } from './user/filters.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { SellersService } from './services/sellers.service';
     UserModule,
     AdminModule,SellerModule,
   ],
-  providers: [UserService,LoginService,RegisterService,SellersService],
+  providers: [UserService,LoginService,RegisterService,SellersService,FiltersPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,9 @@
+.body{
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20(42).webp');
+    height: calc(100vh - 100px);
+    color:aliceblue;
+   
+}
+.buttons{
+    margin-bottom: 5px;
+}

@@ -6,7 +6,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import {  RouterModule } from '@angular/router';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FooterComponent,
     LandingpageComponent,
     ContactusComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FilterPipe
   ],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, FormsModule,
   ],
   exports:[HeaderComponent,FooterComponent,LandingpageComponent,ContactusComponent,AboutUsComponent]
 })
