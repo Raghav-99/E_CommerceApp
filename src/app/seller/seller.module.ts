@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { SellerEditPageComponent } from './seller-edit-page/seller-edit-page.component';
+import { FiltersPipe } from '../user/filters.pipe';
+
 
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    SellerEditPageComponent
+    SellerEditPageComponent,
   ],
   imports: [
     CommonModule,FormsModule
   ],
-  exports:[DashboardComponent]
+  exports:[DashboardComponent,SellerEditPageComponent],
 })
 export class SellerModule { }

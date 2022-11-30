@@ -7,6 +7,7 @@
             <th>Security Question</th>
             <th>Answer</th>
             <th>Phone Number</th>
+            <th>Address</th>
             <th>Shop Name</th>
             <th>Shop Registration Number</th>
         </tr>
@@ -20,6 +21,7 @@
             <td><input type="text" [(ngModel)]= "s.securityQuestion"></td>
             <td><input type="text" [(ngModel)]= "s.answer"></td>
             <td><input type="text" [(ngModel)]= "s.phoneNo"></td>
+            <td><input type="text" [(ngModel)]= "s.address"></td>
             <td><input type="text" [(ngModel)]= "s.shopName"></td>
             <td><input type="text" [(ngModel)]= "s.shopRegNo"></td>
             <td><button class="btn btn-warning" (click)="updateSellerById(s.username, s)">Update</button></td>
