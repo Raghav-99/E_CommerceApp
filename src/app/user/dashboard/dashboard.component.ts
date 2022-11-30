@@ -70,6 +70,7 @@ export class UserDashboardComponent implements OnInit {
     this._route.navigate(['/editpage']);
   }
   Logout() {
+    window.sessionStorage.clear();
     this._route.navigate(['/landingpage']);
   }
 

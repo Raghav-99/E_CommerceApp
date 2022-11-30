@@ -79,6 +79,7 @@ export class SellerDashboardComponent implements OnInit {
         }
         Logout()
         {
+          window.sessionStorage.clear()
           this._route.navigate(['/landingpage']);
         }
 

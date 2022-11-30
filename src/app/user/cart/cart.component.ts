@@ -63,14 +63,15 @@ export class CartComponent implements OnInit {
 
   Checkout(products : Array<Product>) {
     // process payment and store in orderhistory
-    let ListOfSellers : string[] = [] 
+    let ListOfSellers : Commodity[] = [] 
     for (const product of products) {
       this._productService.findAllSellersByProductId(product).subscribe(
         (response) => ListOfSellers = response, (error) => console.log(error), () => {
+          if(ListOfSellers != null) {
           for (const sellername of ListOfSellers) {
-            let history : Orderhistory = new Orderhistory(Date.now(), window.sessionStorage.getItem("authenticatedUser"), sellername, product.pId, this.getQuantity(product));  
+            let history : Orderhistory = new Orderhistory(Date.now().toLocaleString(), window.sessionStorage.getItem("authenticatedUser"), sellername.username, product.pId, this.getQuantity(product));  
             this._orderHistoryService.StoreInHistory(history).subscribe((response) => console.log(response), (error) => console.log(error));
-          }
+          }}
         }
       ) 
     }

@@ -1,15 +1,15 @@
 export class Orderhistory {
-    OrderDate: number = 0;
-    Username: string | null = ''
-    Sellername: string = ''
-    PId: number = 0;
-    QuantityOrdered: number = 0;
+    orderDate: string = '';
+    username: string | null = ''
+    sellername: string | null = ''
+    pId: number = 0;
+    quantityOrdered: number = 0;
 
-    constructor(orderDate: number, username: string | null, sellername: string, pId:number ,quantityOrdered: number) {
-        this.OrderDate = orderDate;
-        this.Username = username;
-        this.Sellername = sellername;
-        this.PId = pId;
-        this.QuantityOrdered = quantityOrdered;
+    constructor(orderDate: string, username: string | null, sellername: string|null, pId:number ,quantityOrdered: number) {
+        this.orderDate = orderDate;
+        this.username = username;
+        this.sellername = sellername;
+        this.pId = pId;
+        this.quantityOrdered = quantityOrdered;
     }
 }

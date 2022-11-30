@@ -36,7 +36,11 @@ getProductsFromService(){
   }
 
   findAllSellersByProductId(product : Product) {
-    return this.http.get<string[]>(this.url + '/CommodityMap/' + product.pId)
+    return this.http.get<Commodity[]>(this.url + '/CommodityMap/', {
+      params: {
+        id:product.pId
+      }
+    })
   }
 }
 
