@@ -13,4 +13,8 @@ export class OrderhistoryService {
   StoreInHistory(history : Orderhistory) {
     return this._http.post(this.url, history);
   }
+
+  GetOrderHistoryByUsername() {
+    return this._http.get<Orderhistory[]>(this.url);
+  }
 }

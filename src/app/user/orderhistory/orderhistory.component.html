@@ -1,3 +1,29 @@
-<p>orderhistory works!</p>
+<table class="table table-bordered table-primary table-hover">
+    <thead>
+        <tr>
+          
+            <th>User Name</th>
+            <th>Seller Name</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+        </tr>
+    </thead>
+   
+    <tbody>
+        
+        <tr *ngFor="let user of UserHistory">
+
+            <td><input type="text" [(ngModel)]= "user.Username"></td>
+            <td><input type="text" [(ngModel)]= "user.Sellername"></td>
+            <td><input type="text" [(ngModel)]= "user.ProductName"></td>
+            <td><input type="text" [(ngModel)]= "user.ProductImage"></td>
+            <!-- <td><button class="btn btn-warning" (click)="updateSellerById(s.sellername, s)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteSellerById(s.sellername)">Delete</button></td> -->
+        </tr>
+    </tbody>
+</table>
+
+
+
 
 

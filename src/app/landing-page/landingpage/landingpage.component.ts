@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
-  ngOnInit(): void {
-    
-  }
+
   public totalItem: number = 0;
   public searchTerm !: string;
   collapsed = true;
@@ -25,6 +23,12 @@ export class LandingpageComponent implements OnInit {
   constructor(private productService: ProductsService, private cartService: CartService, private _route: Router) {
     this.getProductsFromService()
   }
+  ngOnInit(): void {
+    this.productService.getProductsFromAPI()
+      .subscribe(response => {
+        this.Product = response;
+      })
+      }
   getProductsFromService() {
     this.productService.getProductsFromAPI()
       .subscribe(response => {
@@ -55,5 +59,11 @@ export class LandingpageComponent implements OnInit {
         }
       })
     console.log(this.filterCategory)
+  }
+  ADD(){
+    this._route.navigate(
+      ['/login']
+    )
+    
   }
 }

@@ -7,14 +7,14 @@
             <div class="input-group">
                 <div class="form-outline">
                     <!-- <input type="search" id="form1" class="form-control" placeholder="Search items" /> -->
-                    <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" class="form-control"
-                        placeholder="search products">
+                    <!-- <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" class="form-control"
+                        placeholder="search products"> -->
 
                     <!-- <label class="form-label" for="form1">Search</label> -->
                 </div>
-                <button type="button" title="Search" class="btn btn-primary btn1">
+                <!-- <button type="button" title="Search" class="btn btn-primary btn1">
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
             </div>
 
 
@@ -70,15 +70,16 @@
 
 <div class="container">
     <div class="row">
-        <ng-container *ngFor="let item on filterCategory | filter:searchTerm:'productName' ">
+        <ng-container *ngFor="let item of filterCategory  ">
+            <!-- | filter:searchTerm:'productName' -->
             <div class="card col-md-3">
-                <img src="{{item.imageUrl}}" alt="">
+                <img class="img img-fluid" src="{{item.imageUrl}}" alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
                     {{item.productName}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
                     {{item.productDescription}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
-                <button class="btn btn-primary">Add to cart</button>
+                <button (click)="ADD()" class="btn btn-primary">Add to cart</button>
             </div>
         </ng-container>
 

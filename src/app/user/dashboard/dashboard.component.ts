@@ -74,6 +74,9 @@ export class UserDashboardComponent implements OnInit {
     this._route.navigate(['/landingpage']);
   }
   
+  RouteToOrderHistory() {
+    this._route.navigate(['/orderhistory'])
+  }
 
   ngOnInit(): void {
     if(window.sessionStorage.getItem("authenticatedUser") != null && window.sessionStorage.getItem("roleId") === "3") {

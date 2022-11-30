@@ -13,6 +13,7 @@ import { UserDashboardComponent } from './user/dashboard/dashboard.component';
 import { EditpageComponent } from './user/editpage/editpage.component';
 // import { UserModule } from './user/user.module';
 import { SellerDashboardComponent } from './seller/dashboard/dashboard.component'
+import { OrderhistoryComponent } from './user/orderhistory/orderhistory.component';
 const routes: Routes = [
   {path: "", redirectTo:"landingpage", pathMatch:"full"},
   {path: "landingpage", component:LandingpageComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
     {path: "user", component: UserDashboardComponent},
     {path: "seller", component: SellerDashboardComponent}
   ]},
+  {path:"orderhistory", component: OrderhistoryComponent}
 ];
 
 @NgModule({
