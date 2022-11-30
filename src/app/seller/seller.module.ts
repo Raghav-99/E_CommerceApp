@@ -6,6 +6,7 @@ import { SellerEditPageComponent } from './seller-edit-page/seller-edit-page.com
 import { FiltersPipe } from '../user/filters.pipe';
 
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { ItemdispatchComponent } from './itemdispatch/itemdispatch.component';
 
 
 
@@ -14,6 +15,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     SellerDashboardComponent,
     SellerEditPageComponent,
     AddproductComponent,
+    ItemdispatchComponent,
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule

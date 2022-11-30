@@ -14,7 +14,7 @@ export class UserService {
   getUsersFromAPI() {
     return this.http.get<User[]>(this.url+'user');
   }
-  getUsersByIdFromAPI(id: string) {
+  getUsersByIdFromAPI(id: string|null) {
     return this.http.get<User>(this.url + 'user/' + id);
   }
   // addUserFromAPI(c: User) {

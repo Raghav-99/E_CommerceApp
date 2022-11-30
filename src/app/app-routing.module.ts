@@ -14,6 +14,8 @@ import { EditpageComponent } from './user/editpage/editpage.component';
 // import { UserModule } from './user/user.module';
 import { SellerDashboardComponent } from './seller/dashboard/dashboard.component'
 import { OrderhistoryComponent } from './user/orderhistory/orderhistory.component';
+import { PaymentpageComponent } from './user/paymentpage/paymentpage.component';
+import { ItemdispatchComponent } from './seller/itemdispatch/itemdispatch.component';
 const routes: Routes = [
   {path: "", redirectTo:"landingpage", pathMatch:"full"},
   {path: "landingpage", component:LandingpageComponent},
@@ -24,12 +26,15 @@ const routes: Routes = [
   {path:"addproduct",component:AddproductComponent},
   {path:"register-user",component: UserComponent},
   {path:"register-index",component:IndexComponent},
+  {path:"paymentpage",component:PaymentpageComponent},
   {path:"dashboard", children: [
     {path: "admin", component: DashboardComponent},
     {path: "user", component: UserDashboardComponent},
     {path: "seller", component: SellerDashboardComponent}
   ]},
-  {path:"orderhistory", component: OrderhistoryComponent}
+  {path:"orderhistory", component: OrderhistoryComponent},
+  {path:"userdashboard", component: UserDashboardComponent},
+  {path: "paymenthistory", component: ItemdispatchComponent}
 ];
 
 @NgModule({

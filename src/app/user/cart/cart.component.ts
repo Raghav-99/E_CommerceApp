@@ -67,6 +67,8 @@ export class CartComponent implements OnInit {
   } 
 
   Checkout(products : Array<Product>) {
+
+    this._route.navigate(['/paymentpage'])
     // process payment and store in orderhistory
     let ListOfSellers : Commodity[] = [] 
     for (const product of products) {

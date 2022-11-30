@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-paymentpage',
@@ -10,7 +11,7 @@ export class PaymentpageComponent implements OnInit {
   b:string=''
   public products: any = [];
   public grandTotal !: number;
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private _route:Router) { }
   mySet:any
   ngOnInit(): void {
     this.cartService.getProducts()
@@ -22,7 +23,7 @@ export class PaymentpageComponent implements OnInit {
         let total = 0;
         for (var i = 0; i < this.products.length; i++) {
           if (this.products[i].price) {
-            total += this.products[i].price * this.products[i].quantity;
+            total += this.products[i].price * this.products[i];
             this.grandTotal = total;
             console.log(this.products[i].price)
             console.log(this.grandTotal)
@@ -33,8 +34,8 @@ export class PaymentpageComponent implements OnInit {
   getTotal() {
     let total = 0;
     for (var i = 0; i < this.products.length; i++) {
-      if (this.products[i].amount) {
-        total += this.products[i].amount * this.products[i].quantity;
+      if (this.products[i].price) {
+        total += this.products[i].price * this.products[i].quantity;
         this.grandTotal = total;
       }
     }
@@ -55,5 +56,7 @@ export class PaymentpageComponent implements OnInit {
     }
     return quantity;
   }
-   
+   shopNow(){
+    this._route.navigate(['/userdashboard'])
+   }
 }

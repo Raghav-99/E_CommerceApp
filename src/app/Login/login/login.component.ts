@@ -33,9 +33,8 @@ export class LoginComponent implements OnInit {
       if(this.RoleId === "1") {
         this._route.navigate(['/dashboard/admin']);
       }
-      //! change route for seller when seller component is done
       else if(this.RoleId === "2") {
-        this._route.navigate(['/about-us']);
+        this._route.navigate(['/dashboard/seller']);
         window.sessionStorage.setItem("roleId", "2")
         }
       else if(this.RoleId === "3") {

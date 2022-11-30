@@ -62,10 +62,16 @@ export class SellerDashboardComponent implements OnInit {
 
 
         ngOnInit(): void {
+          if(window.sessionStorage.getItem("authenticatedUser") != null && window.sessionStorage.getItem("roleId") === "2")
           this.productService.search.subscribe((val: any) => {
             this.searchKey = val;
           });
-         
+          else
+            this._route.navigate(['/login'])
+        }
+
+        RouteToPaymentHistory() {
+          this._route.navigate(['/paymenthistory'])
         }
 
         Editprofile()
