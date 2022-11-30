@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { SellerDashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SellerEditPageComponent } from './seller-edit-page/seller-edit-page.component';
 import { FiltersPipe } from '../user/filters.pipe';
 
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+    SellerDashboardComponent,
     SellerEditPageComponent,
+    AddproductComponent,
   ],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule, ReactiveFormsModule
   ],
-  exports:[DashboardComponent,SellerEditPageComponent],
+  exports:[SellerDashboardComponent,SellerEditPageComponent],
 })
 export class SellerModule { }

@@ -40,16 +40,18 @@
             <button type="button  " class="btn btn-primary btn1">
                 <span>Orders History</span>
             </button> &nbsp;
-             <!-- <button type="button " class="btn btn-primary btn1">
+             
+            <!-- <button type="button " class="btn btn-primary btn1">
                 <span>History</span> 
-            </button> &nbsp; -->
+            </button> &nbsp; 
+             -->
             <button type="button " class="btn btn-primary btn1" (click)="Logout()">
                 <span>logout</span>
             </button> &nbsp;
         </div>
     </div>
 </header>
-<!-- <app-cart *ngIf="a=='cart'"></app-cart> -->
+<app-cart *ngIf="a=='cart'"></app-cart>
 <div *ngIf="a=='home'">
 <div  class="card-top container-fluid ">
     <div class="container d-flex">
@@ -102,7 +104,7 @@
 
 <div class="container">
     <div class="row ">
-        <ng-container *ngFor="let item of filterCategory | filters:searchKey:'title' ">
+        <ng-container *ngFor="let item of filterCategory | filters:searchKey:'productName' ">
         <!-- <ng-container *ngFor="let item of Product "> -->
             <div class="card col-sm-4 col-md-3 col-xl-2">
                 <img class="img-fluid" src="{{item.imageUrl}}" alt="">
