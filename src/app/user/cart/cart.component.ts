@@ -3,6 +3,7 @@ import { Commodity } from 'src/app/models/commodity';
 import { Orderhistory } from 'src/app/models/orderhistory';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
 import { OrderhistoryService } from 'src/app/services/orderhistory.service';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -13,9 +14,10 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class CartComponent implements OnInit {
 
- public products: any = [];
+  public products: any = [];
   public grandTotal !: number;
-  constructor(private cartService: CartService, private _orderHistoryService:OrderhistoryService, private _productService:ProductsService) { }
+
+  constructor(private cartService: CartService, private _orderHistoryService:OrderhistoryService, private _productService:ProductsService, private _route:Router) { }
   mySet:any
   ngOnInit(): void {
     this.cartService.getProducts()
@@ -35,6 +37,9 @@ export class CartComponent implements OnInit {
         }
       })
   }
+  paymentpage(){
+    this._route.navigate(['/paymentpage'])
+  }
   getTotal() {
     let total = 0;
     for (var i = 0; i < this.products.length; i++) {
@@ -48,10 +53,10 @@ export class CartComponent implements OnInit {
   removeItem(item: any) {
     this.cartService.removeCartItem(item);
   }
+  
   emptycart() {
     this.cartService.removeAllCart();
   }
-  
   getQuantity(product:any) {
     let quantity = 0;
     for (var i = 0; i < this.products.length; i++) {
@@ -76,5 +81,4 @@ export class CartComponent implements OnInit {
       ) 
     }
   }
-
 }

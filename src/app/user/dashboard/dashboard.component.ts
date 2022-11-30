@@ -73,6 +73,7 @@ export class UserDashboardComponent implements OnInit {
     window.sessionStorage.clear();
     this._route.navigate(['/landingpage']);
   }
+  
 
   ngOnInit(): void {
     if(window.sessionStorage.getItem("authenticatedUser") != null && window.sessionStorage.getItem("roleId") === "3") {

@@ -1,1 +1,125 @@
-<p>paymentpage works!</p>
+<ng-container *ngIf="a=='checkoutpage'">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mySet  let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+                            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                            <th style="width: 12%;">{{item.price}}</th>
+                            <td style="width: 12%;">{{getQuantity(item)}}</td>
+                            <td id="total" style="width: 12%;">{{item.price*getQuantity(item)}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td id="total">GRAND TOTAL</td>
+                            <td></td>
+
+                            <td id="total">{{getTotal()}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><button (click)="a='paymentpage'" class="btn btn-primary">Continue</button></td>
+
+                            <!-- <td><strong>Grand Total : ${{grandTotal}}</strong></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="a=='paymentpage'">
+    <div>
+        <h1 class="justify-content-center d-flex">SELECT ONE PAYMENT METHOD</h1>
+
+        <div class="justify-content-center d-flex">
+        <!-- <ul class="nav bg-light nav-pills rounded-pill mb-3"> -->
+
+        <ul class="nav bg-light nav-pills rounded-pill mb-3">
+            <li class="nav-item">
+                <a (click)="b='card'" class="nav-link active rounded-pill">
+                    <i class="fa fa-credit-card"></i>
+                    Credit Card
+                </a>
+            </li> &nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+                <a (click)="b='cod'" class="nav-link active rounded-pill">
+                    <i class="fa fa-money"></i>
+                    CASH ON DELIVERY
+                </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    <div *ngIf="b=='cod'">
+        <div class="row card">
+            <h1>CASH ON DELIVERY</h1>
+            <h3>Pay a total of ₹ {{getTotal()}} when your order arrives.</h3>
+            <button class="btn btn-success" href="">PLACE ORDER</button>
+        </div>
+         <br>
+    </div>
+ 
+    
+  
+    <div *ngIf="b=='card'" class="container ">
+        <div class="row card">
+                <form >
+                    <div class="form-group">
+                        <label>Name on the card</label>
+                        <input type="text" placeholder="XXXXXXXXXX" required class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card number</label>
+                        <div class="input-group">
+                            <input type="text" placeholder="XXXX XXXX XXXX XXXX" class="form-control" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-cc-visa mx-1"></i>
+                                    <i class="fa fa-cc-amex mx-1"></i>
+                                    <i class="fa fa-cc-mastercard mx-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label>Expiry</label>
+                                <div class="input-group">
+                                    <input type="number" placeholder="MM"  class="form-control" required>
+                                    <input type="number" placeholder="YY"  class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group ">
+                                <label title="Three-digits code on the back of your card">CVV
+                                    <i class="fa fa-question-circle"></i>
+                                </label>
+                                <input type="text" required class="form-control" placeholder="xxx">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="align-items-centre">
+                    <button class="btn btn-lg btn-success "> PAY ₹{{getTotal()}} and place order </button>
+                </div>
+                </form>
+            </div>
+        </div>
+</ng-container>

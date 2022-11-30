@@ -1,21 +1,15 @@
 <header>
-    <div class="navbar navbar-dark bg-secondary shadow-sm">
+    <div class="navbar navbar-dark bg-black shadow-sm">
         <div class="navbar-brand align-item-center d-flex">
-            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;&nbsp; </i>
-            <strong style="font-size: 30px;">CYBKART</strong>
-            <div class="flex-row align-items-center">
-                <div class="form-group ">
-                    <input type="text" class="form-control" placeholder="search products">
-                    <!-- [(ngModel)]="searchTerm" (keyup)="search($event)" -->
-                    <!-- <span class="fas fa-search search-icon"></span>  -->
-                </div> 
-            </div>
-            <span class="fas fa-search search-icon"></span>
-
+            <i style="font-size: 40px;" class="fas fa-store">&nbsp;&nbsp; </i>
+            <strong style="font-size: 30px;">ANYTIME PROM</strong>
         </div>
-        <button routerLink="cart" class="btn btn-primary">
-            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
-            <!-- <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div> -->
-        </button>
+        <div class="navbar-expand">
+            <div class="navbar-nav ">
+                <a class="nav-item nav-link " routerLink="/login">Login </a>
+                <a class="nav-item nav-link" routerLink="/contactus" routerLinkActive="active">Contact-us</a>
+                <a class="nav-item nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a>
+            </div>
+        </div>
     </div>
 </header>
