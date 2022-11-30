@@ -1,21 +1,25 @@
-<h1>Welcome to New Role Registration Page</h1>
+<app-header></app-header>
 <div class="main">
     <div class="col-md-6 col-sm-12">
-      
+        
+        <div class=" container-fluid card justift-content-center">
+            <h1 class="d-flex justify-content-center">Select Your Role</h1>
 
-            <h1>Select Your Role</h1>
+            <div class="container justify-content-center">
+                <input type="radio" id="seller" name="roles" value="2" [(ngModel)]="RoleId" /><label
+                    for="seller">Seller</label> &nbsp;&nbsp;
+                <input type="radio" id="user" name="roles" value="3" [(ngModel)]="RoleId" /><label
+                    for="user">User</label>&nbsp;&nbsp;<br><br>
 
-            
-            <input type="radio" id="seller" name="roles" value="2" [(ngModel)]="RoleId" /><label for="seller">Seller</label> &nbsp;&nbsp;
-            <input type="radio" id="user" name="roles" value="3" [(ngModel)]="RoleId" /><label for="user">User</label>&nbsp;&nbsp;<br><br>
+                <div *ngIf="RoleId == '2'">
+                    <app-seller></app-seller>
+                </div>
 
-            <div *ngIf="RoleId == '2'">
-                <app-seller></app-seller>
+                <div *ngIf="RoleId == '3'">
+                    <app-user></app-user>
+                </div>
             </div>
-
-            <div *ngIf="RoleId == '3'">
-                <app-user></app-user>
-            </div>
-
+        </div>
     </div>
 </div>
+<app-footer></app-footer>
