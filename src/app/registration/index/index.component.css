@@ -1,0 +1,17 @@
+.card {
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20(42).webp');
+    justify-content: center;
+    padding: 10px;
+    margin: 100px;
+    margin-top: 0px;
+    margin-bottom: auto;
+    border: 5px solid rgb(11, 11, 11);
+    /* border-color: aliceblue; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: rgb(24, 24, 24);
+} 
+.main{
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20(42).webp');
+    height: calc(150vh - 100px);
+
+}

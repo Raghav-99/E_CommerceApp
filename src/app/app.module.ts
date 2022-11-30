@@ -16,8 +16,10 @@ import { UserModule } from './user/user.module';
 // import { UserDashboardComponent } from './user/dashboard/dashboard.component';
 import { SellerModule } from './seller/seller.module';
 import { SellersService } from './services/sellers.service';
+import { FiltersPipe } from './user/filters.pipe';
 import { OrderhistoryComponent } from './user/orderhistory/orderhistory.component';
 import { OrderhistoryService } from './services/orderhistory.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { OrderhistoryService } from './services/orderhistory.service';
     UserModule,
     AdminModule,SellerModule,
   ],
-  providers: [UserService,LoginService,RegisterService,SellersService, OrderhistoryService],
+providers: [UserService,LoginService,RegisterService,SellersService, OrderhistoryService, FiltersPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

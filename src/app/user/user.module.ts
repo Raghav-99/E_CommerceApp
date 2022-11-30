@@ -22,6 +22,11 @@ import { PaymentpageComponent } from './paymentpage/paymentpage.component';
   imports: [
     CommonModule,FormsModule
   ],
-  exports: [UserDashboardComponent,EditpageComponent],
+  exports: [UserDashboardComponent,
+    EditpageComponent,
+    FiltersPipe,
+    CartComponent,
+    OrderhistoryComponent,
+    PaymentpageComponent],
 })
 export class UserModule { }

@@ -1,36 +1,29 @@
-  
-@media only screen and (min-width: 1000px){
+
+
+@media only screen and (min-width: 1015px){
     .form-control {
         border-radius: 3px;
         width: 600px;
         margin-left: 20px;
     }
-    .search-icon {
-        position: absolute;
-        z-index: 10;
-        right: 27%;
-        top: 23px;
-        color: blue;
-    }
+    .btn1{
+        margin-block-end: auto;
+        background-color: #384e6f00;
+     }
 }
-@media only screen and (max-width: 1000px){
+
+@media only screen and (max-width: 1015px){
     .form-control {
         border-radius: 3px;
-        width: 600px;
+        /* width: 600px; */
         margin-left: 20px;
     }
-    .search-icon {
-        position: absolute;
-        z-index: 10;
-        right: 27%;
-        top: 23px;
-        color: blue;
-    }
+      .btn1{
+        margin-block-end: auto;
+        background-color: #060606;
+     }
 }
-.btn-primary{
-    margin-block-end: auto;
-}
- 
+
  .card-top {
     position: relative;
     display: flex;
@@ -58,7 +51,8 @@
 
 .card {
     padding: 20px;
-    margin: 50px;
+    margin: 15px;
+    margin-top: 20px;
 }
 
 .card img {
@@ -71,4 +65,7 @@
 .card img:hover {
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
+}
+.nav-link{
+    color:aliceblue
 }
