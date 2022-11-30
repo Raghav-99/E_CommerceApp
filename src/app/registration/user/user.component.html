@@ -10,9 +10,10 @@
       <div class="d-flex flex-row align-items-center mb-4">
         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
         <div class="form-group">
-          <input type="text" formControlName="FName" placeholder="FullName">
+          <input type="text" formControlName="FName" placeholder="FullName" minlength="3" maxlength="20">
           <span class="text-danger" *ngIf="UserForm.controls['FName'].dirty && UserForm.hasError('required','FName')">Full is Required
           </span>
+          <span class="text-danger" *ngIf="UserForm.hasError('minlength','FName')">Minlength must be 3</span>
         </div>
       </div>
 
@@ -56,18 +57,20 @@
     <div class="d-flex flex-row align-items-center mb-4">
       <i class="fa-solid fa-phone fa-lg me-3 fa-fw"></i>
       <div class="form-group">
-        <input type="text" formControlName="phone" placeholder="Phone Number">
+        <input type="text" formControlName="phone" placeholder="Phone Number" minlength="10" maxlength="10">
         <span class="text-danger" *ngIf="UserForm.controls['phone'].dirty && UserForm.hasError('required','phone')">Phone Number is Required
         </span>
+        <span class="text-danger" *ngIf="UserForm.hasError('minlength','phone')">Minlength must be 10</span>
       </div>
     </div>
 
     <div class="d-flex flex-row align-items-center mb-4">
       <i class=" fa fa-map-marker fa-lg me-3 fa-fw"></i>
       <div class="form-group">
-        <input type="text" formControlName="address" placeholder="Address">
+        <input type="text" formControlName="address" placeholder="Address" minlength="10" maxlength="50">
         <span class="text-danger" *ngIf="UserForm.controls['address'].dirty && UserForm.hasError('required','address')">Address is Required
         </span>
+        <span class="text-danger" *ngIf="UserForm.hasError('minlength','address')">Minlength must be 10</span>
       </div>
     </div>
 
@@ -90,9 +93,10 @@
     <div class="d-flex flex-row align-items-center mb-4">
       <i class=" fa fa-pencil fa-lg me-3 fa-fw"></i>
       <div class="form-group">
-        <input type="text" formControlName="Answer" placeholder="Answer">
+        <input type="text" formControlName="Answer" placeholder="Answer" minlength="5" maxlength="20">
         <span class="text-danger" *ngIf="UserForm.controls['Answer'].dirty && UserForm.hasError('required','Answer')">Answer is Required
         </span>
+        <span class="text-danger" *ngIf="UserForm.hasError('minlength','Answer')">Minlength must be 5</span>
       </div>
     </div>
     <button type="submit" [disabled]="!UserForm.valid" class="btn- btn-primary mt-3">Register</button>

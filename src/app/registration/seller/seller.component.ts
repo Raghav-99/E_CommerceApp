@@ -16,7 +16,7 @@ export class SellerComponent implements OnInit {
   Email:string='';
   UName:string='';
   Phone:string='';
-  Address:string='';
+  //Address:string='';
   HintQue:string='';
   Answer:string='';
   ShopName:string='';
@@ -35,7 +35,7 @@ export class SellerComponent implements OnInit {
       Email:['',Validators.required],
       UName:['',Validators.required],
       Phone:['',Validators.required],
-      Address:['',Validators.required],
+      //Address:['',Validators.required],
       HintQue:['',Validators.required],
       Answer:['',Validators.required],
       ShopName:['',Validators.required],
@@ -48,7 +48,7 @@ export class SellerComponent implements OnInit {
 
   Register(statusCode:number)
   {
-    let sellerDetails:Seller = new Seller(this.SellerForm.value.FName,this.SellerForm.value.UName, this.SellerForm.value.HintQue, this.SellerForm.value.Answer, this.SellerForm.value.Phone, this.SellerForm.value.ShopName, this.SellerForm.value.ShopReg, this.SellerForm.value.Address);
+    let sellerDetails:Seller = new Seller(this.SellerForm.value.FName,this.SellerForm.value.UName, this.SellerForm.value.HintQue, this.SellerForm.value.Answer, this.SellerForm.value.Phone, this.SellerForm.value.ShopName, this.SellerForm.value.ShopReg);
     this._service.RegisterUserIntoIdentity(this.SellerForm.value.UName, this.SellerForm.value.Email, this.SellerForm.value.Pwd, this.SellerForm.value.Cpwd)
     .subscribe(response => statusCode = response, (error) => console.log(error), () => {
       if(statusCode === 201) {
