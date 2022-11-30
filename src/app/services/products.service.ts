@@ -34,7 +34,10 @@ getProductsFromService(){
   MapProductToSeller(commodity : Commodity) {
     return this.http.post<Commodity>(this.url + '/CommodityMap', commodity);
   }
- 
+
+  findAllSellersByProductId(product : Product) {
+    return this.http.get<string[]>(this.url + '/CommodityMap/' + product.pId)
+  }
 }
 
 
