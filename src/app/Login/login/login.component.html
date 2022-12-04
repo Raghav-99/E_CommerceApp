@@ -1,14 +1,69 @@
-<h1>Welcome to Login Page</h1>
-
-<input type="radio" id="admin" name="roles"/>Admin &nbsp;&nbsp;
-<input type="radio" id="user" name="roles" />User  &nbsp;&nbsp;
-<input type="radio" id="seller" name="roles"/>Seller&nbsp;&nbsp;<br><br>
-
-<form>
- Username <input type="text" id="uname" placeholder="uname"><br><br>
- Password <input type="password" id="pwd" placeholder="pwd"><br><br>
- <button type="submit" value="Submit">Submit</button>
-</form>
+<app-header></app-header>
+<div class="body">
+    <div class="login-main-text">
+        <h2 class="justify-content-center d-flex">LOGIN PAGE</h2>
+    </div>
 
 
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-md-12 col-lg-8 col-xl-6 d-flex align-items-center ">
+        <div class="card ">
+            <img name="img" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                class="img-fluid" alt="Sample image">
+            <!-- <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR3ugxZujjIQCakPXQyiYOjbhVwRYdk6peA&usqp=CAU" alt="website_logo" id="favi" class="img-fluid img"><br><br>
+            </div> -->
+            <div class="login-form ">
+                <h1 class="justify-content-left d-flex">Select Your Role</h1>
+                <div class="justify-content-center align-content-center">
+                    <input   type="radio" id="admin" name="roles" value="1" [(ngModel)]="RoleId" /><label
+                        for="admin">Admin</label> &nbsp;&nbsp;
+                    <input type="radio" id="seller" name="roles" value="2" [(ngModel)]="RoleId" /><label
+                        for="seller">Seller</label> &nbsp;&nbsp;
+                    <input type="radio" id="user" name="roles" value="3" [(ngModel)]="RoleId" /><label
+                        for="user">User</label>&nbsp;&nbsp;<br><br>
+                </div>
 
+                <div class="col">
+                    <form [formGroup]="loginForm" (ngSubmit)="Authenticate(401)">
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+
+                            <div class="form-group">
+                                <tr><label><b>Username</b></label></tr>
+                                <tr><input type="text" formControlName="uname" class="from-control"
+                                        id="exampleInputusername" placeholder="Username"></tr>
+                                <span class="text-danger"
+                                    *ngIf="loginForm.controls['uname'].dirty && loginForm.hasError('required','uname')">User
+                                    is required</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+
+                            <div class="form-group">
+                                <tr><label><b>Password</b></label></tr>
+                                <tr><input type="password" formControlName="pwd" class="from-control"
+                                        id="exampleInputpassword" aria-describedby="passwordhelp"
+                                        placeholder="password"></tr>
+                                <span class="text-danger"
+                                    *ngIf="loginForm.controls['pwd'].dirty && loginForm.hasError('required','pwd')">Password
+                                    is required</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" [disabled]="!loginForm.valid"
+                                class="btn- btn-primary mt-3 ">Login</button>
+                        </div>
+                    </form>
+                    Don't Have an Account? <a routerLink="/register-index" routerLinkActive="active">Register Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -10,35 +10,38 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserListComponent implements OnInit {
 
-User=Array<User>();
-u:User=new User();
-msg:string=''
-constructor(private _cs:UserService) {
-  this.getUsersFromService() 
-}
-getUsersFromService(){
+ListOfUsers=Array<User>();
+// User:User=new User();
+// msg:string=''
+constructor(private _cs:UserService) { }
+
+getUsersFromService() {
   this._cs.getUsersFromAPI()
-  .subscribe(response=>this.User =response);
+  .subscribe(response=>this.ListOfUsers =response);
 }
-getUserById(id:number){
-  this._cs.getUsersByIdFromAPI(id)
-  .subscribe(response=>this.u=response);
-}
-deleteUserById(id:number){
+
+// getUserById(id:string){
+//   this._cs.getUsersByIdFromAPI(id)
+//   .subscribe(response=>this.User=response);
+// }
+
+deleteUserById(id:string){
   this._cs.deleteUserByIdFromAPI(id)
-  .subscribe(response=>this.u=response);
+  .subscribe(response=>this.ListOfUsers=response);
 }
-addUser(u:User){
- this._cs.addUserFromAPI(this.u)
- .subscribe(response=>()=>this.msg="Row added successfully.");
-}
-updateUserById(id:number){
-  this._cs.updateUserByIdFromAPI(id,this.u)
-  .subscribe(response=>()=>this.msg="Row updated successfully."); 
+// addUser(u:User){
+//  this._cs.addUserFromAPI(this.u)
+//  .subscribe(response=>()=>this.msg="Row added successfully.");
+// }
+
+updateUserById(id:string, user:User){
+  this._cs.updateUserByIdFromAPI(id, user)
+  .subscribe(response=> user=response); 
 }
 
 
   ngOnInit(): void {
+    this.getUsersFromService()
   }
 
 }

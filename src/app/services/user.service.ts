@@ -8,31 +8,33 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 export class UserService {
 
   Users = Array<User>();
-  url = 'http://localhost:3000/users';
-  constructor(private http: HttpClient) {
-  }
+  url = 'http://localhost:5233/api/';
+  constructor(private http: HttpClient) {}
+  
   getUsersFromAPI() {
-    return this.http.get<User[]>(this.url);
+    return this.http.get<User[]>(this.url+'user');
   }
-  getUsersByIdFromAPI(id: number) {
-    return this.http.get<User>(this.url + '/' + id);
+  getUsersByIdFromAPI(id: string|null) {
+    return this.http.get<User>(this.url + 'user/' + id);
   }
-  addUserFromAPI(c: User) {
-    return this.http.post(this.url, c, {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json'
-      })
-    });
-  }
+  // addUserFromAPI(c: User) {
+  //   return this.http.post(this.url, c, {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json'
+  //     })
+  //   });
+  // }
+
   x:any={};
-  updateUserByIdFromAPI(empno: number,c:User) {
-    return this.http.put(`${this.url}/${empno}`,c,{
-           headers:new HttpHeaders({
-             'Content-Type':'application/json'
+  
+  updateUserByIdFromAPI(UId: string,user:User) {
+    return this.http.put<User>(`${this.url+'user'}/${UId}`,user,{
+          headers:new HttpHeaders({
+            'Content-Type':'application/json'
           })
         });
   }
-  deleteUserByIdFromAPI(id: number) {
-    return this.http.delete<User>(this.url + '/' + id);
+  deleteUserByIdFromAPI(id: string) {
+    return this.http.delete<User[]>(this.url + 'user/' + id);
   }
 }

@@ -1,0 +1,74 @@
+/* .sidenav {
+    height: 100%;
+    background-color: black;
+    overflow-y: hidden;
+    padding-top: 20px;
+}
+
+
+.login-main-text {
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+.main-head {
+    height: 150px;
+    background: #FFF;
+}
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        margin-left: 40%;
+        width: 60%;
+    }
+
+    .sidenav {
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+   
+}
+
+
+h1 {
+    color: red;
+} */
+
+
+
+
+.body{
+    background: url('https://mdbootstrap.com/img/Photos/Others/img%20(42).webp');
+    color: black;
+}
+.card {
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20(42).webp');
+    opacity: 0.9;
+    padding: 10px;
+    color:black;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    /* border: 5px solid rgb(11, 11, 11); */
+    /* border-color: aliceblue; */
+    box-shadow: 0 4px 8px 0 rgba(1, 2, 3, 0.2);
+    /* color: rgb(24, 24, 24); */
+} 

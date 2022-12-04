@@ -1,44 +1,26 @@
 <header>
-    <div class="navbar navbar-dark bg-danger shadow-sm margin">
+    <div class="navbar navbar-dark bg-black shadow-sm margin">
         <div class="navbar-brand align-item-center flex-fill d-flex">
             <i style="font-size: 40px;" class="fas fa-store">&nbsp; </i>
             <strong style="font-size: 30px;">CYBKART</strong>
-            <!-- <div class="align-item navbar-nav">
-                <div class="flex-row align-items-center">
-                    <div class=" ">
-                        <input type="text" class="form-control" placeholder="search products"> a
-                    </div>
-                    <i class="fas fa-search search-icon"></i>
 
+            <!-- <div class="input-group">
+                <div class="form-outline">
+                    <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" class="form-control"
+                        placeholder="search products"> 
                 </div>
+                <button type="button" title="Search" class="btn btn-primary btn1">
+                    <i class="fas fa-search"></i>
+                </button>
             </div> -->
 
-            <!-- <div class="input-group ">
-                <div class="form-outline ">
-                    <input type="search" id="" class="form-control rounded" />
-                    <label class="form-label" for="form1">Search</label>
-                </div>
-                <button type="button" class="btn btn-light rounded text-secondary">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-             -->
-             <div class="input-group">
-                <div class="form-outline">
-                    <input type="search" id="form1" class="form-control" />
-                    <!-- <label class="form-label" for="form1">Search</label> -->
-                </div>
-                <button type="button" class="btn btn-primary">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
 
-        <div class="navbar-expand" id="navbarbuttons">
-            <div class="navbar-nav ">
-                <a class="nav-item nav-link " routerLink="/login" routerLinkActive="active">Login </a>
-                <a class="nav-item nav-link" routerLink="/contactus" routerLinkActive="active">Contact-us</a>
-                <a class="nav-item nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a>
+            <div class="navbar-expand">
+                <div class="navbar-nav ">
+                    <a class="nav-item nav-link " routerLink="/login">Login </a>
+                    <a class="nav-item nav-link" routerLink="/contactus" routerLinkActive="active">Contact-us</a>
+                    <a class="nav-item nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a>
+                </div>
             </div>
         </div>
     </div>
@@ -47,57 +29,56 @@
 <div class="card-top container-fluid">
     <div class="container d-flex">
         <div class="item">
-            <!-- <a (click)="filter('')"> -->
-            <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
-            <h6>All products</h6>
-            <!-- </a> -->
+            <a (click)="filters('')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                <h6>All products</h6>
+            </a>
         </div>
         <div class="item">
-            <!-- <a (click)="filter('electronics')"> -->
-            <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
-            <h6>Electronics</h6>
-            <!-- </a> -->
+            <a (click)="filters('electronics')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                <h6>Electronics</h6>
+            </a>
         </div>
         <div class="item">
-            <!-- <a (click)="filter('fashion')"> -->
-            <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
-            <h6>Fashion</h6>
-            <!-- </a> -->
+            <a (click)="filters('fashion')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+                <h6>Fashion</h6>
+            </a>
         </div>
         <div class="item">
-            <!-- <a (click)="filter('jewelery')"> -->
-            <img style="width: 62px; margin-top: 5px;"
-                src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50"
-                alt="">
-            <h6>Jewllery</h6>
-            <!-- </a> -->
+            <a (click)="filters('jewelery')">
+                <img style="width: 62px; margin-top: 5px;"
+                    src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50"
+                    alt="">
+                <h6>Jewllery</h6>
+            </a>
         </div>
         <div class="item">
-            <!-- <a (click)="filter('jewelery')"> -->
-            <img style="width: 92px; margin-top: 5px;"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2XYX_bygxMCo258AR-IfqZAbnSzNb8oRf4YfFI7K&s"
-                alt="">
-            <h6>Groceries</h6>
-            <!-- </a> -->
+            <a (click)="filters('jewelery')">
+                <img style="width: 92px; margin-top: 5px;"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp2XYX_bygxMCo258AR-IfqZAbnSzNb8oRf4YfFI7K&s"
+                    alt="">
+                <h6>Groceries</h6>
+            </a>
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <ng-container *ngFor="let item of product ">
+        <ng-container *ngFor="let item of filterCategory  ">
+            <!-- | filter:searchTerm:'productName' -->
             <div class="card col-md-3">
-                <img src="{{item.image}}" alt="">
+                <img class="img img-fluid" src="{{item.imageUrl}}" alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
-                    {{item.title}}</h5>
+                    {{item.productName}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
-                    {{item.description}}</p>
+                    {{item.productDescription}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
-                <button class="btn btn-primary">Add to cart</button>
+                <button (click)="ADD()" class="btn btn-primary">Add to cart</button>
             </div>
         </ng-container>
 
     </div>
 </div>
-
-

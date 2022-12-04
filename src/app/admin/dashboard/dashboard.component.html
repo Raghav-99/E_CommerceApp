@@ -1,11 +1,13 @@
-<div class="container">
-    <h1>Admin Dashboard</h1>
-
-    <button class="btn btn-primary" (click)="a = 'Seller'  ">Sellers</button> &nbsp;
+<app-header></app-header>
+<div class="body ">
+    <h1 class="d-flex justify-content-center">Admin Dashboard</h1>
+    <div class="d-flex justify-content-center buttons">
+    <button class="btn btn-primary" (click)="a = 'Seller'  ">Sellers</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button class="btn btn-primary" (click)="a = 'user'">User</button>
-
+</div>
 
     <app-seller-list *ngIf="a=='Seller'"></app-seller-list>
     <app-user-list *ngIf="a=='user'"></app-user-list>
 
 </div>
+<app-footer></app-footer>
