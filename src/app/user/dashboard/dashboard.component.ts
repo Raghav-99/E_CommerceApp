@@ -79,7 +79,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(window.sessionStorage.getItem("authenticatedUser") != null && window.sessionStorage.getItem("roleId") === "3") {
+    
       this.productService.search.subscribe((val: any) => {
         this.searchKey = val;
       });
@@ -88,9 +88,5 @@ export class UserDashboardComponent implements OnInit {
           this.totalItem = res.length;
         })
     }
-    else {
-      this._route.navigate(['/login'])
-    }
   }
 
-}

@@ -41,11 +41,7 @@ export class EditpageComponent implements OnInit {
   
   
     ngOnInit(): void {
-      if(window.sessionStorage.getItem("authenticatedUser") != null && window.sessionStorage.getItem("roleId") === "3"){
       this.getUserById(window.sessionStorage.getItem("authenticatedUser"));
-      }
-      else 
-        this._route.navigate(['/login'])
     }
   
   }
